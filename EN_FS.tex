@@ -1,5 +1,7 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+% \usepackage{german}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[left=1.7cm, right=1cm, top=2cm, bottom=1.7cm, showframe]{geometry}
@@ -14,35 +16,163 @@
 \tableofcontents
 \twocolumn
 
-\section{Grundlagen}
-	Frequenz-Wirkleistungsregelung in \textbf{Generatoren}
+\section{Deckung des Energiebedarfs}
+	\subsection{Frequenz-Wirkleistungsregelung}
 
 	\begin{enumerate}
-		\item{stationärer Zustand (Gleichgwicht)}
+		\item[a)]{stationärer Zustand (Gleichgwicht)}
 		\begin{align*}
 			 W_{rot} = \frac{1}{2} \cdot J \cdot \omega_{mech} ^{2} &\qquad
 			 \omega_{el} = p  \cdot \omega_{mech} \\
-			 \vspace{1pt}\\
+			%  \vspace{1pt}\\
 			 W_{mech-zu} = W_{el-ab} &\qquad
 			 P_{mech-zu} = P_{el-ab}
 		\end{align*}
+
+		$p$: Polpaarzahl \quad
+		$J$: Massenträgheitsmoment
 		
+		\item[b)]{Störung}
 		
-		
-	
-		
-		
-		\item{Störung}
-		
-		Sprunghafte Zunahme um $ \Delta P \Rightarrow$ Abbremsen der Rotoren $\Rightarrow$ Sinken der Drehzahl aller Generatoren
-		
-		$ W_{m-zu} \neq W_{el-ab} $
-		
-		$ P_{m-zu} \neq P_{el-ab} $
-		
-		$ \Delta W = \frac{1}{2} \cdot J \cdot (\omega_{stat} - \omega_{akt}) $
-		
+		Sprunghafte Zunahme um $ \Delta P \Rightarrow$ 
+		Abbremsen der Rotoren $\Rightarrow$ Sinken der Drehzahl aller Generatoren
+		$\Rightarrow$ fehlende Energie wird aus gesp. Rotationsenergie aller elek.
+		Maschinen übernommen $\Delta W_{rot}$
+		\begin{align*}
+			W_{m-zu} \neq W_{el-ab} &\qquad 
+			P_{m-zu} \neq P_{el-ab} \\
+			\Delta W_{rot} = \frac{1}{2} \cdot & J \cdot (\omega_{stat} - \omega_{akt})
+		\end{align*}
+	\subsection{Belastungsdiagramm, -dauer $T_{n}$}
+	$W_{el} = P_{n} \cdot T_{a} = P_{max} \cdot T_{m} = P_{mittel} \cdot T_{n}$
 	\end{enumerate}
+
+\section{Transformatoren}
+	\subsection{Grundlagen}
+	\subsubsection{Grundgleichungen idealer Trafo}
+	% $u_{ind}(t) = -N \cdot \frac{d\phi}{dt} = -N \cdot A \cdot \frac{dB(t)}{dt} = N \cdot A \cdot \omega \cdot \hat{B} \cdot sin (\omega t)$
+	
+	$U_{ieff} = \frac{1}{\sqrt{2}} \cdot 2 \pi f \cdot N \cdot A_{Fe} \cdot \hat{B} = 4,44 \cdot N \cdot f \cdot \hat{B} \cdot A_{Fe}$
+	
+	Spannungstrafo:
+	$\frac{U_{2}}{U_{1}} = \frac{N_{2}}{N_{1}} = \frac{1}{\text{ü}}$ 
+
+	$\underline{U}'_{2} = \text{ü} \cdot \underline{U}_{2} $
+
+	Stromtrafo:
+	$\frac{I_{2}}{I_{1}} = \frac{N_{1}}{N_{2}} = \text{ü}$
+
+	$\underline{I}'_{2} = \underline{I}_{2} \cdot \frac{1}{\text{ü}}$ 
+	
+	Impedanztrafo:
+	$Z_{1} = \text{ü²} \cdot Z_{2}$
+
+	$R'_{2} = \text{ü²} \cdot R_{2}$
+
+	$L'_{2\sigma} = \text{ü²} \cdot L_{2\sigma}$
+
+
+	% $\underline{U}_{w} = $
+
+	Durchgangsleistung:	
+	$S_{1} = S_{2} = S_{D}$
+
+	\subsubsection{Bemessung Trafos}
+	
+	$N_{1} \cdot A_{L1} = N_{2} \cdot A_{L2}$
+
+	$A_{Lges,1} = A_{Lges,2} = A_{cu,ges} $
+	
+	Windungsspannung:
+
+	$\dfrac{U_{1}}{N_{1}} = \dfrac{U_{2}}{N_{2}} = U_{W1} = U_{W2} = U_{W}$
+
+	$U_{W} \approx k \cdot A_{Fe}$
+	
+	Bemessungsleistung 3-Phasen-Trafo:
+
+	$S_{rT} = 3 \cdot 4,44 \cdot f \cdot \hat{B}_{zul} \cdot J_{r} \cdot (A_{Fe} \cdot A_{Cu})$
+
+	$S_{rT} = k \cdot (A_{Fe} \cdot A_{Cu})$
+
+	Auslegung: 
+	
+	$f = 50Hz, B = 1,7 T - 1,8 T, A_{Fe} = 1,2 \frac{A}{mm^{2}}$
+	
+	$test$
+
+	$test$
+
+	$ test $
+
+	$ test $
+
+	$test f$
+	\subsubsection{Wachstumsgesetze}
+
+	Frage: 1 Trafo (900MVA) wirtschaftlicher als 3 Trafos (je 300 MVA)?
+
+	$A_{Fe,neu} = A_{Fe} \cdot k^2$ \quad $A_{cu,neu} = A_{cu} \cdot k^2$ \quad
+
+	$V_{neu} = V \cdot k^3$ \quad $S_{rT,neu} = S_{rT} \cdot k^4$
+
+	Gewicht: $m_{neu} = m \cdot k^3 \Rightarrow$ Kosten $\downarrow$ 
+
+	Verluste: $P_{V,Cu,neu} = P_{V,Cu} \cdot k^3$
+
+	Verluste: $P_{V,Fe,neu} = P_{V,Fe} \cdot k^3$
+
+	$P_{V,ges,neu} = P_{V,ges} \cdot k^3 \Rightarrow$ Wirkungsgrad $\eta \uparrow$
+
+	Kühlung: $A_{Huell,neu} = A_H \cdot k^2$ 
+
+	$\Rightarrow$ relative Kühlfläche $\downarrow$, Aufwand Kühlung $\uparrow$
+
+	1 Trafo wirtschaftlicher!
+
+
+
+	
+	\subsection{ESB Trafo}
+
+	Maschengleichung:
+	$
+	\begin{pmatrix}
+		R_{1} & j\omega L'_{1\sigma} \\
+		R'_{2} & j\omega L'_{2\sigma}
+	\end{pmatrix} \cdot
+	\begin{pmatrix}
+		\underline{I}_{1} \\
+		-\underline{I}'_{2}
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\underline{U}_{1} \\
+		\underline{U}'_{2}
+	\end{pmatrix}
+	$
+
+	$U_{1} = R_{1} \cdot \underline{I}_{1} + j\omega L_{1\sigma} \cdot \underline{I}_{1} - R'_{2}- \underline{I}'_{2}-j\omega L'_{2\sigma} \cdot \underline{I}'_{2}+ \underline{U}'_{2}$
+
+	Mit $I_{1} = -I_{2}$ und $U'_{2} = \text{ü} \cdot U_2$:
+
+	$U_{1} = (R_1 + R_2) \cdot \underline{I}_1 + j(X_{1\sigma} + X_{2\sigma}) \cdot \underline{I}_1 + \text{ü} \cdot \underline{U}_2$
+
+	\subsection{Betriebskonstanten}
+	\subsubsection{Kurzschlussmessung}
+
+	Kurzschluss(KS) der Klemmen an  OS/US
+	
+	$\Rightarrow$ Messen der Spannung an US/OS 
+	
+	$\Rightarrow$ Angabe relative KS-Spannung $u_{k}$ in $\%$
+
+	\subsubsection{}
+
+	% \begin{align*}
+	
+	% \end{align*}
+
+
 
 	
 
