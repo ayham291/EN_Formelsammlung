@@ -13,3 +13,5 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Berechnung Betriebskonstanten}{2}{}%
 \contentsline {subsection}{\numberline {2.4}Trafo-Schaltgruppen}{2}{}%
 \contentsline {subsection}{\numberline {2.5}Parallelbetrieb Trafos}{3}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Parallelbetrieb: Leerlauf}{3}{}%
+\contentsline {subsubsection}{\numberline {2.5.2}Parallelbetrieb: Last}{3}{}%
