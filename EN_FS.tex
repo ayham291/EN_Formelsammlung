@@ -43,9 +43,11 @@
 			P_{m-zu} \neq P_{el-ab} \\
 			\Delta W_{rot} = \frac{1}{2} \cdot & J \cdot (\omega_{stat} - \omega_{akt})
 		\end{align*}
-	\subsection{Belastungsdiagramm, -dauer $T_{n}$}
-	$W_{el} = P_{n} \cdot T_{a} = P_{max} \cdot T_{m} = P_{mittel} \cdot T_{n}$
 	\end{enumerate}
+
+	\subsection{Belastungsdiagramm, -dauer $T_{n}$}
+
+	$W_{el} = P_{n} \cdot T_{a} = P_{max} \cdot T_{m} = P_{mittel} \cdot T_{n}$
 
 \section{Transformatoren}
 	\subsection{Grundlagen}
@@ -98,16 +100,7 @@
 	Auslegung: 
 	
 	$f = 50Hz, B = 1,7 T - 1,8 T, A_{Fe} = 1,2 \frac{A}{mm^{2}}$
-	
-	$test$
 
-	$test$
-
-	$ test $
-
-	$ test $
-
-	$test f$
 	\subsubsection{Wachstumsgesetze}
 
 	Frage: 1 Trafo (900MVA) wirtschaftlicher als 3 Trafos (je 300 MVA)?
@@ -130,9 +123,6 @@
 
 	1 Trafo wirtschaftlicher!
 
-
-
-	
 	\subsection{ESB Trafo}
 
 	Maschengleichung:
@@ -157,17 +147,70 @@
 
 	$U_{1} = (R_1 + R_2) \cdot \underline{I}_1 + j(X_{1\sigma} + X_{2\sigma}) \cdot \underline{I}_1 + \text{ü} \cdot \underline{U}_2$
 
+	Mit $R_T = R_1 + R_2$ und $X_T = X_{1\sigma} + X_{2\sigma}$:
+	
+	$U_1 = (R_T + jX_T) \cdot I_1 + \text{ü} \cdot U_2$
+
 	\subsection{Betriebskonstanten}
 	\subsubsection{Kurzschlussmessung}
 
-	Kurzschluss(KS) der Klemmen an  OS/US
+	Kurzschluss(KS) der Klemmen an  \textbf{OS}/US
 	
-	$\Rightarrow$ Messen der Spannung an US/OS 
+	$\Rightarrow$ Messen der Spannung an \textbf{US}/OS 
 	
 	$\Rightarrow$ Angabe relative KS-Spannung $u_{k}$ in $\%$
 
-	\subsubsection{}
+	komplexe KS-Spannung: $\underline{U}_{kn} = U_{kn,R} +jU_{kn,X}$
 
+	$u_{k1} = \frac{U_{k1}}{U_{rT1}/ \sqrt{3}}$
+
+	$u_{k1} = u_{k2} = u_{k} = u_{kR}+j u_{kX}$
+
+	KS-Strom:
+	$I_k = \frac{I_{rT}}{u_k}$
+
+	KS-Spannung:
+	$U_k = u_k \cdot U_{rT}$
+	\subsubsection{Berechnung Betriebskonstanten}
+	
+	Betrag Impedanz $Z$:
+	
+	$Z_T = u_k \cdot \frac{U_{rT}^2}{\sqrt{3}I_{rT}U_{rT}} =\frac{u_k \cdot U_{rT}^2}{100 \% \cdot S_{rT}} = \frac{u_k}{100\%} \cdot Z_{Bezug}$
+
+	Resistanz $R$:
+	
+	$R_T = u_{kR} \cdot \frac{U_{rT}}{\sqrt{3} I_{rT}} = \frac{u_{kR}\cdot U^2_{rT}}{100\% \cdot S_{rT}} = P_{kT} \cdot \frac{U_{rT}^2}{S_{rT}^2}$
+
+	$u_{kR} = \frac{P_{kT}}{S_{rT}}$
+
+	$u_{kX} = \sqrt{u^2_k - u^2_{kR}}$
+	
+	Reaktanz $X$:
+	
+	$X_T = \sqrt{Z^2_T - R^2_T} = u_{kX} \cdot \frac{U^2_{rT}}{S_{rT}}$
+	
+	Leistung Kurschlussverlust $P_{kT}$:
+	
+	$P_{kT} \approx 3\cdot R_T \cdot I^2_{rT}$
+	
+	\subsection{Trafo-Schaltgruppen}
+	tableofcontents
+
+	
+	tableofcontents
+	
+	
+	tableofcontents
+
+	\subsection{Parallelbetrieb Trafos}
+	Allgemein:
+
+	$\underline{U}_{1,T1} = \underline{U}_{1,T2} = \underline{U}_{1T}$
+
+	$\underline{U}_{2,T1} = \underline{U}_{1T} \cdot $
+
+	% $$
+	% $$
 	% \begin{align*}
 	
 	% \end{align*}

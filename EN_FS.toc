@@ -10,4 +10,6 @@
 \contentsline {subsection}{\numberline {2.2}ESB Trafo}{2}{}%
 \contentsline {subsection}{\numberline {2.3}Betriebskonstanten}{2}{}%
 \contentsline {subsubsection}{\numberline {2.3.1}Kurzschlussmessung}{2}{}%
-\contentsline {subsubsection}{\numberline {2.3.2}}{2}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Berechnung Betriebskonstanten}{2}{}%
+\contentsline {subsection}{\numberline {2.4}Trafo-Schaltgruppen}{2}{}%
+\contentsline {subsection}{\numberline {2.5}Parallelbetrieb Trafos}{3}{}%
