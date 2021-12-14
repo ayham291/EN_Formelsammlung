@@ -1,0 +1,91 @@
+\section{Freileitungen}
+\subsection{Betriebskonstanten}
+
+\begin{gather*}
+    R' = \frac{R_L}{l} \quad
+    L' = \frac{L_L}{l}\\
+    \underline{Z}' = R' +jX' \quad
+    \underline{Y}' = G' + jB'
+\end{gather*}
+
+$R'$ := Resistanzbelag $\Omega/km$ oder $m\Omega/m$\\
+$X' = \omega L'$ := Reaktanzbelag\\
+$G'$ := Konduktanzbelag $nS/km$ oder $pS/m$ \\
+$B' = \omega C'$ := Suszeptanzbelag\\
+
+\subsubsection{Resistanzbelag}
+\begin{enumerate}
+    \item[a)]{Gleichstromwiderstand} 
+    \begin{gather*}
+        R' = \frac{R}{l} = \frac{\rho_{20^\circ C}}{A_{eff}}\\
+        F_\vartheta = 1+\alpha \cdot (\vartheta_{max} - 20^\circ C)
+    \end{gather*}
+    $A_{eff}$: Wirksamer Querschnitt\\
+    $F_{\vartheta}$: R-erhöhung durch Leitererwärmung\\
+    $\vartheta_{max}$: max. zul. Betriebstemp. des Leiterseils\\
+
+    <Bild Folie 39 einfügen>!
+    
+    % \item[b)]{Leitererwärmung Widerstand} 
+    % \begin{gather*}
+    % \end{gather*} 
+
+    \item[b)]{Wechselstromwiderstand}
+    \begin{gather*}
+    J=J\cdot e^{-x/\delta}\\
+    \delta = \sqrt{\frac{1}{\pi\kappa\mu f}} = \sqrt{\frac{\rho}{\pi\mu f}}\\
+    F_S = \frac{R'_{AC}}{R'_{DC}}\\
+    A_{AC} = 2\pi\cdot r \cdot \delta < A_{DC}\\
+    \end{gather*} 
+    $J$: Stromdichte an Leiteroberfläche\\
+    $x$: Eindringtiefe in Leitung\\
+    $\delta$: Eindringtiefe\\
+    $F_S$: R-Erhöhung durch Skineffekt\\
+
+    $F_S$ Werte aus Folie 42 entnehmen!!!
+
+    \item[c)]{Betriebsresistanzbelag $R_b$}
+    \begin{gather*}
+        R'_b = R'_{DC} \cdot F_\vartheta \cdot F_S\\
+        R'_b = \frac{R'_{b, Seil}}{n}
+    \end{gather*}
+    $n$: Anzahl Teilleiter\\
+    test\\test\\test\\test\\
+\end{enumerate}
+
+\subsection{Reaktanzbelag}
+\begin{enumerate}
+    \item[a)]{Induktivität von zweier paralleler Leiter}
+        \begin{gather*}
+            L'=\frac{L}{l}\\
+            L'_{a} = \frac{\mu_0}{\pi}\cdot ln\frac{D}{r}\\
+            L'_{i} = \frac{\mu_0}{\pi} \cdot \frac{1}{4}\\
+            L'_{ges} = L'_a + L'_b = \frac{\mu_0}{\pi} \cdot [ln \frac{D}{r} +\frac{1}{4}] \\D>>r\\
+        \end{gather*}
+    $L'_a$ : äußererer Leiterbelag\\
+    $L'_i$ : innerner Leiterbelag\\
+    $D$ : Leiterabstand
+    
+    \item[b)]{Zwei-Phasen-Leiter / AC-Leitung (L1/L2)}
+        \begin{align*}
+            L'_b&=\frac{X'_b}{\omega}=4\cdot 10^{-7}\cdot [ln\frac{D}{r}+\frac{1}{4}]\frac{H}{m}\\
+            X'_b&=\omega \cdot L'_b = \pi \cdot [4 ln \frac{D}{r}+1]\cdot 10^{-2} \frac{\Omega}{km}\\
+        \end{align*}
+    \item[c)]{Drehstromleitung}
+        \begin{align*}
+            x'_b&=\frac{}{}
+        \end{align*}
+    
+
+\end{enumerate}
+% $$
+
+
+% $$
+% \begin{align*}
+
+% \end{align*}
+
+
+
+
