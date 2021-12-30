@@ -1,24 +1,51 @@
 \section{Freileitung}
+\subsection{Durchhang von Freileitungsseilen}
 hängen hyperbolisch durch. (ab \SI{110}{k\volt}:)
 \begin{equation*}
-    h_{min} = \SI{6}{\metre} + \frac{U_{nLL} - \SI{110}{k\volt}}{\SI{150}{k\volt}}
+    h_{min} = \SI{6}{\metre} + \left(\frac{U_{nLL} - \SI{110}{k\volt}}{\SI{150}{k\volt}}\right)m
 \end{equation*}
-
-\textbf{Gleichstromwiderstand}\\
-\textbf{Widerstandserhöhung durch Erwärmung}
+\subsection{Resistanzbelag}
+\begin{itemize}
+\item[]{\textbf{Gleichstromwiderstand}}
 \begin{gather*}
     R_{\textcolor{purple}{=}}' = \frac{R_{=}}{l} = \frac{\rho_{20 \degree}}{A_{eff}}\\
-    F_{\upsilon} = 1 + \alpha (\upsilon_{max} - 20\degree C) + \beta (\upsilon_{max} - 20\degree C)...
+    F_{\vartheta} = 1 + \alpha (\vartheta_{max} - 20\degree C) + \beta (\vartheta_{max} - 20\degree C)...
 \end{gather*}
+$A_{eff}:$ Wirksamer Querschnitt\\
+$F_{\vartheta}:$ Widerstandserhöhung durch Erwärmung\\
+$\vartheta_{max}:$ max. zul. Betriebstemp. des Leiterseils\\
 
-\textbf{Stromdichte (Skineffekt)}\\
-\textbf{Eindringtiefe}\\
-\textbf{Gesamt Betriebswiderstand}
+\begin{tabular}[h]{l|c|c}
+    \hline
+    Material & $\rho_{\SI{20}{\degreeCelsius}}$ in $\frac{m\ohm \cdot mm^2}{m}$ & $\alpha$ in $K^{-1}$ \\
+    \hline
+    Alu & 28,6 & 0,0038 \\
+    \hline
+    Kupfer & 17,8 & 0,0039 \\
+    \hline
+    Silber & 16 & 0,0038 \\
+    \hline
+    Eisendraht & 120 & 0,0052 \\
+\end{tabular}\\
+
+\item[]{\textbf{Wechselstromwiderstand}}
+% \textbf{Stromdichte (Skineffekt)}\\
+% \textbf{Eindringtiefe}\\
+% \textbf{Gesamt Betriebswiderstand}
 \begin{gather*}
-    S = S_{0} \cdot e^{\frac{-x}{\delta}}\\
-    \delta = \sqrt{ \frac{\rho}{\pi \cdot \mu_{0}} \cdot f}\\
-    R_{b}' = R_{=}' \cdot F_{\upsilon} \cdot F_{S} = \frac{R_{b Seil}'}{n_{Seil}}
+    J = J \cdot e^{-x/\delta}\\
+    \delta = \sqrt{ \frac{\rho}{\pi \cdot \mu_{0} \cdot f}}
+     = \sqrt{ \frac{1}{\pi \cdot \kappa \cdot \mu_{0} \cdot f}}
 \end{gather*}
+$J:$ Stromdichte (Leiterrand)\\
+$x:$ Abstand vom Leiterrand (Oberfläche)\\
+$\delta:$ Eindringtiefe (Skineffekt)\\
+
+\item[]{\textbf{Betriebs-Resistanzbelag}}
+\begin{gather*}
+    R_{b}' = R_{=}' \cdot F_{\vartheta} \cdot F_{S} = \frac{R_{b Seil}'}{n_{Seil}}
+\end{gather*}
+$F_S:$ Widerstandserhöhung durch Skineffekt
 
 \subsection{Induktivität}
 \textbf{Aüßere Ind. Einzelleiter} \textcolor{dgreen}{mag. Fluss}\\
@@ -70,4 +97,5 @@ Werden Bezeichnet nach: n x 2r / a
 Bei Asymmetrie (Phase zur Mastmitte)
 \begin{equation*}
     D_{L1/L\RN{2}} = \sqrt[6]{D_{1\RN{2}} \cdot D_{2\RN{3}} \cdot D_{3\RN{1}} \cdot D_{1\RN{3}} \cdot D_{2\RN{1}} \cdot D_{3\RN{2}}}
-\end{equation*} 
+\end{equation*}
+\end{itemize}

@@ -89,7 +89,7 @@
     \item[]{\textbf{KS-Größen}}
     \begin{align*}
     I_K &= \frac{I_r}{u_K} = \frac{U_{rT}/\sqrt{3}}{Z_T}\\
-    U_K &= \frac{u_K}{100\%} \cdot U_{rT}
+    U_K &= \frac{u_K}{100\%} \cdot \frac{U_{rT}}{\sqrt{3}}
     \end{align*}
 
     \item[]{\textbf{Betriebskonstanten}}
@@ -106,22 +106,31 @@
     P_{ab} &= S_{rT} \cdot \cos \varphi\\
     P_K &= 3 \cdot R_T \cdot I^2_r\\
     \eta &= \frac{P_{ab}}{P_{zu}} = \frac{P_{ab}}{P_{ab}+P_K+P_L}
-\end{align*}
+\end{align*}\\
 $P_{ab}$: abgegebene Wirkleistung\\
 $P_K$: KS-/Kupferverluste\\
 $P_L$: Leerlaufverluste
 
 \end{itemize}
 
-\subsection{Parallelbetrieb}
+\subsection{Parallelbetrieb von 2 Trafos}
+\textbf{Scheinleistungsteiler}
+\begin{align*}
+    |S_{T1}| &= \dfrac{Z_{T2}}{Z_{T1} + Z_{T2}} \cdot |S_{Tges}|\\
+    |S_{T2}| &= \dfrac{Z_{T1}}{Z_{T1} + Z_{T2}} \cdot |S_{Tges}|\\
+    |S_{Tges}| &= |S_{T1}| + |S_{T2}|\\
+\end{align*}
+\begin{itemize}
+    \item[]{\textbf{max. Last, ohne Trafobelastung}}
+    \begin{gather*}
+    \left(\dfrac{S_{rT1/2}}{S_{T1/2}}\right)_{min} \Rightarrow S_{T,max} = \left(\dfrac{S_{rT}}{S_T}\right)_{min} \cdot S_{T,ges}\\
+    S_{T1} = \dfrac{u_{K,min}}{U_{K,T1}} \cdot S_{rT1}
+    \end{gather*}
+\end{itemize}
+
 \begin{enumerate}
     \item Schaltgruppe mit gleicher Kennzahl
     \item Gleiches Übersetzungsverhältnis
     \item annähernd gleiche Kurzschlussspannung (max. diff. 10\%)
     \item Bemessungsscheinleistung kleiner als 3:1
 \end{enumerate}
-
-\textbf{Scheinleistungsanteil}
-\begin{align*}
-    |S_{T1}| &= \dfrac{Z_{T2}}{Z_{T1} + Z_{T2}} \cdot |S_{Tges}|
-\end{align*}
