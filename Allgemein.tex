@@ -1,0 +1,130 @@
+\section{Grundlagen}
+\subsection{Drehstrom (DS), 3-Phasen-System}
+\begin{enumerate}
+
+
+    \item{\textbf{Spannungen in DS (symmetrisch)}}\\
+        \underline{Leiter-Erde-Spannung $U_{LE}=230V$}
+        \begin{flalign*}
+            \underline{U}_{L1} &= U_{LE} \angle 0^\circ &\\
+            \underline{U}_{L2} &= U_{LE} \angle -120^\circ = U_{LE} \angle 240^\circ &\\
+            \underline{U}_{L3} &= U_{LE} \angle -240^\circ = U_{LE} \angle 120^\circ &
+        \end{flalign*}
+
+        \underline{Leiter-Leiter-Spannung $U_{LL}=400V$}
+        \begin{flalign*}
+            U_{LL} &= U_{LE} \cdot \sqrt{3} &\\
+            \underline{U}_{12} &= \underline{U}_{L1} - \underline{U}_{L2} = U_{LL} \angle 30^\circ &\\
+            \underline{U}_{23} &= \underline{U}_{L2} - \underline{U}_{L3} = U_{LL} \angle 270^\circ &\\
+            \underline{U}_{31} &= \underline{U}_{L3} - \underline{U}_{L1} = U_{LL} \angle 150^\circ &
+        \end{flalign*}
+
+    \item{\textbf{Ströme in DS (symmetrisch)}}
+        \begin{flalign*}
+            \underline{I}_{Lx} &= \dfrac{\underline{U}_{Lx}}{\underline{Z}} &
+       \end{flalign*}
+
+        $Lx:$ Stranggrößen L1, L2, L3\\
+
+    \item{\textbf{Effektivgrößen, Symmetrische Last}}
+        \begin{center}
+            \vspace{-1em}
+    \begin{tabular}[h]{l|l|l}
+        Stranggröße & Stern & Dreieck
+     \vspace{1pt}\\
+        Spannung $U_{LE}$ & $U_{LE} = \dfrac{U_{LL}}{\sqrt{3}}$ & $U_{LE}=U_{LL}$\\
+        Strom $I_L$ & $I_L = I_Z$ & $I_L = \sqrt{3}\cdot I_Z$
+    \end{tabular}
+    \vspace{0.5em}\\
+    $I_Z:$ Strom in der Zuleitung, Betriebsstrom
+    \end{center}
+
+    \item{\textbf{Leistungen in DS}}
+
+        \underline{Scheinleistung S [VA]:}
+        \begin{flalign*}
+        S &= 3 \cdot U_{LE} \cdot I_L
+          = \sqrt{3} \cdot U_{LL} \cdot I_L &\\
+          &= \sqrt{P^2 + Q^2} &\\
+        \underline{S} &= 3 \cdot \underline{U}_{LE} \cdot \underline{I}_L^*
+                      = P+jQ &
+        \end{flalign*}
+        \textit{in Sternschaltung:}
+        \begin{flalign*}
+        \underline{S}_{ds} &= \frac{U_{LL}^2}{\underline{Z}_{LN}*}  &\\
+        \underline{S}_{ws}  &= \frac{U_{LL}^2}{3 \cdot \underline{Z}_{LN}*} &
+        \end{flalign*}
+
+        \underline{Wirkleistung P [W]:}
+        \begin{flalign*}
+        P   &= S \cdot \cos \varphi &\\
+            &= 3 \cdot U_{LE} \cdot I_L \cdot \cos \varphi &\\
+            &= \sqrt{3} \cdot U_{LL} \cdot I_L \cdot \cos \varphi &
+        \end{flalign*}
+
+        \underline{Blindleistung Q [var]:}
+        \begin{flalign*}
+        |Q| &= S \cdot \sin \varphi = P \cdot \tan \varphi &\\
+            &= 3 \cdot U_{LE} \cdot I_L \cdot \sin \varphi &\\
+            &= \sqrt{3} \cdot U_{LL} \cdot I_L \cdot \sin \varphi &\\
+           & Q
+            \begin{cases}
+                \text{induktiv} >0\\
+                \text{kapazitiv} <0
+                \end{cases}
+        \end{flalign*}
+\end{enumerate}
+
+\subsection{Energiebedarf, Deckung}
+\begin{enumerate}
+    \item{\textbf{Tagesbelastungskurve}}
+\begin{flalign*}
+    W &= \int_{0}^{T_{n}} P(t)  \,dt \\
+      &= P_{n} \cdot T_{a} = P_{max} \cdot T_{m} =
+    P_{mittel} \cdot T_{n}
+\end{flalign*}
+
+\begin{tabular}[h]{l|l}
+    \hline
+    $P_{n}$         & Nennleistung \\
+    $T_{a}$         & Ausnutzungsdauer \\
+    \hline
+    $P_{max}$       & Höchstlast \\
+    $T_{m}$         & Benutzungsdauer \\
+    \hline
+    $P_{mittel}$    & mittlere Leistung \\
+    $T_{n}$         & Nennbetriebsdauer (meist. 24h) \\
+\end{tabular}\\
+\\
+\item{\textbf{Frequenz-Wirkleistungs-Regelung}}
+    		\item[a)]{\underline{stationärer Zustand (Gleichgewicht)}}
+		\begin{align*}
+			 W_{rot} = \frac{1}{2} \cdot J \cdot \omega_{mech} ^{2} &\qquad
+			 \omega_{el} = p  \cdot \omega_{mech} \\
+			%  \vspace{1pt}\\
+			 W_{mech-zu} = W_{el-ab} &\qquad
+			 P_{mech-zu} = P_{el-ab}
+		\end{align*}
+
+		$p$: Polpaarzahl \quad
+		$J$: Massenträgheitsmoment\\
+
+		\item[b)]{\underline{Störung}}
+		% Sprunghafte Zunahme um $ \Delta P \Rightarrow$
+		% Abbremsen der Rotoren $\Rightarrow$ Sinken der Drehzahl aller Generatoren
+		% $\Rightarrow$ fehlende Energie wird aus gesp. Rotationsenergie aller elek.
+		% Maschinen übernommen $\Delta W_{rot}$
+		\begin{align*}
+			W_{m-zu} \neq W_{el-ab} &\qquad
+			P_{m-zu} \neq P_{el-ab} \\
+			\Delta W_{rot} = \frac{1}{2} \cdot & J \cdot (\omega_{stat} - \omega_{akt})\\
+		\end{align*}
+
+\end{enumerate}
+
+% \begin{gather*}
+%     [R'] = [X'] = \frac{\Omega}{km} = \frac{m\Omega}{m} \\
+%     [G'] = \frac{nS}{km} = \frac{pS}{m} \\
+%     [B'] = \frac{\mu S}{km} = \frac{nS}{m}\\
+%     B_{b}' = \omega C_{b}'
+% \end{gather*}
