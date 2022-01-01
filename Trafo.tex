@@ -1,0 +1,136 @@
+\section{Trafo}
+
+\begin{tabular}[h]{l|l}
+    \hline
+    OS & Oberspannungsseite (Primär)\\
+    US & Unterspannungsseite (Sekundär)
+\end{tabular}
+\vspace{-1em}
+\subsection{Grundgleichungen, idealer Trafo}
+    % \item{\textbf{Windungsspannung}}
+\begin{itemize}
+
+    \item[]{\textbf{Windungspannung}}
+\begin{flalign*}
+    \frac{U_{1}}{N_{1}} &= \frac{U_{2}}{N_{2}} = U_W = 4,44 \cdot f \cdot \hat{B} \cdot A_{Fe} &
+\end{flalign*}
+
+    \item[]{\textbf{Induktionsspannung, Effektivwert}}
+    \begin{flalign*}
+        U_{ieff} &= \frac{1}{\sqrt{2}} \cdot 2 \pi f \cdot N \cdot A_{Fe} \cdot
+        \hat{B} &\\ &= 4,44 \cdot N \cdot f \cdot \hat{B} \cdot A_{Fe}
+    \end{flalign*}
+
+    \item[]{\textbf{Spannungstrafo}}
+    \begin{gather*}
+        \frac{U_{1}}{U_{2}} = \frac{N_{1}}{N_{2}} = \ddot{u} \\
+        \underline{U}'_{2}  = \ddot{u} \cdot \underline{U}_{2}
+    \end{gather*}
+
+    \item[]{\textbf{Stromtrafo}}
+    \begin{gather*}
+        \frac{I_{1}}{I_{2}} = \frac{N_{1}}{N_{2}} = \frac{1}{\ddot{u}}\\
+        \underline{I}'_{2} = \underline{I}_{2} \cdot \frac{1}{\ddot{u}}
+    \end{gather*}
+
+    \item[]{\textbf{Impedanztrafo}}
+    \begin{gather*}
+        Z_{1} = \ddot{u}^2 \cdot Z_{2}\\
+        R'_{2} = \ddot{u}^2 \cdot R_{2}\\
+        L'_{2\sigma} = \ddot{u}^2 \cdot L_{2\sigma}
+    \end{gather*}
+
+    \item[]{\textbf{Durchgangsleistung}}
+    \begin{gather*}
+        S_{1} = S_{2} = S_{D}
+    \end{gather*}
+\end{itemize}
+% \textcolor{dgreen}{$R_{T}$ wird meist vernachlässigt}
+\vspace{-2em}
+\subsection{ESB}
+\vspace{-2em}
+\begin{gather*}
+    R_{T} + jX_{T} = (R_1+R_2')+j(X_{1\sigma}+X'_{2\sigma})\\
+    Z_{T} = R_{T} + jX_{T}\\
+    U_1 = (R_T + jX_T) \cdot I_1 + U'_2
+\end{gather*}
+% \subsubsection{Leerlaufmessung}
+% $\rightarrow R_{Fe}, X_{h}, P_{0T}$ \\\textcolor{dgreen}{Primärseitig $U_{rT1}$}\\
+% % \textbf{Eisenwiderstand}\\
+% % \textbf{Hauptreaktanz}\\
+% % \textbf{Übersetzungsverhältnis}\\
+% % \textbf{relativer Leerlaufstrom} \textcolor{dgreen}{(0.2 - 2\%)}
+% \begin{gather*}
+%     R_{Fe} \approx \frac{U_{rT1}/ \sqrt{3}}{I_{1}} \cdot \cos \phi = \frac{U_{rT1}^2}{P_{0T}}\\
+%     X_{1h} \approx \frac{U_{rT1}/ \sqrt{3}}{I_{1}} \cdot \sin \phi = \frac{1}{i_{O}/100 \%} \cdot \frac{U_{rT1}^2}{S_{rT}}\\
+%     \textnormal{"u} \approx \frac{U_{rT1}}{\sqrt{3} \cdot U_{2}}\\
+%     i_{O} = \frac{I_{0}}{I_{rT}} \cdot 100\%
+% \end{gather*}
+\subsubsection{Kurzschlussmessung (KS)}\,\\
+\setlength\parindent{20pt}\indent KS auf US. $\rightarrow  \underline{U}_{K1}$ auf OS\\
+\indent KS auf OS. $\rightarrow \underline{U}_{K2}$ auf US
+\begin{itemize}
+    \item[]{\textbf{Bemessungsspannung} (r = rated)}
+    \[
+    U_{rT} = U_{LL} = U_{LE} \cdot \sqrt{3}
+    \]
+
+    \item[]{\textbf{relative KS-Spannung [\%]}}
+    \begin{align*}
+    \ul{u}_K &= u_{K,Re} + j u_{K,Im}\\
+        u_K  &= \sqrt{u^2_{K,Re}+u^2_{K,Im}}\\
+             &= \frac{U_K\cdot \sqrt{3}}{U_{rT}}\cdot 100\%\\
+             &= \frac{Z_T \cdot I_r}{U_{rT}/\sqrt{3}}\\
+    \ul{u}_{K1}  &= \frac{\ul{U}_{K1}}{ U_{rT1}/\sqrt{3} } =\frac{\ul{U}_{K1}}{U_{LE,T1}}\\
+    \ul{u}_{K2} &= \frac{\ul{U}_{K2}}{ U_{rT2}/\sqrt{3}} = \frac{\ul{U}_{K1} \cdot \textnormal{ü}}{ U_{rT1} \cdot \textnormal{ü}/\sqrt{3}}\\
+    u_{K,Re}      &= \frac{P_{K}}{S_{r}}\cdot 100\%=\frac{R_T \cdot I_r}{U_{rT}/\sqrt{3}}
+    \end{align*}
+
+    \item[]{\textbf{KS-Größen}}
+    \begin{align*}
+    I_K &= \frac{I_r}{u_K} = \frac{U_{rT}/\sqrt{3}}{Z_T}\\
+    U_K &= \frac{u_K}{100\%} \cdot \frac{U_{rT}}{\sqrt{3}}
+    \end{align*}
+
+    \item[]{\textbf{Betriebskonstanten}}
+    \begin{align*}
+    Z_T &= u_K \cdot \frac{U^2_{rT}}{S_{rT}} \\
+    R_T &= \frac{u_{K,Re}}{100\%} \cdot \frac{U^2_{rT}}{S_{rT}} =
+         \frac{u_{K,Re}}{100\%} \cdot \frac{U_{rT}}{\sqrt{3}\cdot I_r}\\
+        &= P_K \cdot \frac{U^2_{rT}}{S^2_{rT}}\\
+    X_T &= u_{K,Im} \cdot \frac{U^2_{rT}}{S_{rT}}
+    \end{align*}
+
+    \item[]{\textbf{Verlustleistung, Wirkungsgrad}}
+\begin{align*}
+    P_{ab} &= S_{rT} \cdot \cos \varphi\\
+    P_K &= 3 \cdot R_T \cdot I^2_r\\
+    \eta &= \frac{P_{ab}}{P_{zu}} = \frac{P_{ab}}{P_{ab}+P_K+P_L}
+\end{align*}\\
+$P_{ab}$: abgegebene Wirkleistung\\
+$P_K$: KS-/Kupferverluste\\
+$P_L$: Leerlaufverluste
+
+\end{itemize}
+
+\subsection{Parallelbetrieb von 2 Trafos}
+\textbf{Scheinleistungsteiler}
+\begin{align*}
+    |S_{T1}| &= \dfrac{Z_{T2}}{Z_{T1} + Z_{T2}} \cdot |S_{Tges}|\\
+    |S_{T2}| &= \dfrac{Z_{T1}}{Z_{T1} + Z_{T2}} \cdot |S_{Tges}|\\
+    |S_{Tges}| &= |S_{T1}| + |S_{T2}|\\
+\end{align*}
+\begin{itemize}
+    \item[]{\textbf{max. Last, ohne Trafobelastung}}
+    \begin{gather*}
+    \left(\dfrac{S_{rT1/2}}{S_{T1/2}}\right)_{min} \Rightarrow S_{T,max} = \left(\dfrac{S_{rT}}{S_T}\right)_{min} \cdot S_{T,ges}\\
+    S_{T1} = \dfrac{u_{K,min}}{U_{K,T1}} \cdot S_{rT1}
+    \end{gather*}
+\end{itemize}
+
+\begin{enumerate}
+    \item Schaltgruppe mit gleicher Kennzahl
+    \item Gleiches Übersetzungsverhältnis
+    \item annähernd gleiche Kurzschlussspannung (max. diff. 10\%)
+    \item Bemessungsscheinleistung kleiner als 3:1
+\end{enumerate}
