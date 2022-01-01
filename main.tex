@@ -1,0 +1,50 @@
+\documentclass[10pt, journal]{IEEEtran}			% draftcls, http://vesta.informatik.rwth-aachen.de/ftp/pub/mirror/ctan/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage[ngerman]{babel}	                    % Worttrennung nach deutschen standarts
+\usepackage[utf8]{inputenc}                     % umlaute
+\usepackage{geometry}			                % Randabstände einstellen
+\usepackage[T1]{fontenc}	                    % deutsche Schriftzeichen
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{here}                               % Bilder hier her zwingen
+\usepackage{subfig}                             % Bilder nebeneinander
+\usepackage{siunitx}				            % Si Einheiten
+\usepackage{gensymb}                            % ° in math
+\usepackage{multirow}  				            % Multirow in Tabellen
+\usepackage{arydshln}  				            % Punkt/strich Linen in Tabellen
+\usepackage{lscape} 			            	% Seite kann mit landscape in Querformat dargestellt werden
+\usepackage{tikz}                               % Kleine Koordinatensysteme
+\usepackage{steinmetz}
+
+\setlength\abovedisplayshortskip{-5pt}  		% Kopfabstand von Formeln
+\setlength\abovedisplayskip{+7pt}
+\setlength\belowdisplayskip{+7pt}
+\geometry{left=2cm, top=1cm, bottom=1cm, right=1cm, showframe}
+\definecolor{orange}{RGB}{255,120,0}
+\definecolor{dgreen}{RGB}{0,95,0}
+\definecolor{purple}{RGB}{200,0,255}
+\usetikzlibrary{shapes.misc, angles, quotes, calc, patterns}    % Kreuz def., Winkel, Winkel
+\tikzset{cross/.style=                          % Kreuz definition
+    {cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},
+    cross/.default={1pt}}                       % default radius = 1pt.
+                                                % \RN für Römischezahl in math
+\newcommand{\RN}[1]{\textup{\uppercase\expandafter{\romannumeral#1}}}
+\newcommand{\ul}{\underline}
+
+
+\title{Formelsammlung EN}
+\author{J/T/A}
+\onehalfspacing
+
+\begin{document}
+\maketitle
+
+\input{Allgemein}
+\input{Trafo}
+\input{Freileitung}
+\input{Kabel}
+
+\end{document}

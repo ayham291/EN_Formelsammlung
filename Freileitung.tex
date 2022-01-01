@@ -1,0 +1,109 @@
+\section{Freileitung}
+\subsection{Durchhang von Freileitungsseilen}
+hängen hyperbolisch durch. (ab \SI{110}{k\volt}:)
+\begin{equation*}
+    h_{min} = \SI{6}{\metre} + \left(\frac{U_{\mathit{nLL}} - \SI{110}{k\volt}}{\SI{150}{k\volt}}\right)m
+\end{equation*}
+\subsection{Resistanzbelag}
+\begin{itemize}
+\item[]{\textbf{Gleichstromwiderstand}}
+
+$A_{\mathit{eff}}:$ Wirksamer Querschnitt [$mm^2$]\\
+$F_{\vartheta}:$ Widerstandserhöhung durch Erwärmung\\
+$\vartheta_{max}:$ max. zul. Betriebstemp. des Leiterseils
+
+\begin{gather*}
+    R_{\textcolor{purple}{=}}' = \frac{R_{=}}{l} = \frac{\rho_{20 \degree}}{A_{\mathit{eff}}}\cdot\frac{1}{km}\\
+    F_{\vartheta} = 1 + \alpha (\vartheta_{max} - 20\degree C) + \beta (\vartheta_{max} - 20\degree C)...
+\end{gather*}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[h]{|l|c|c|}
+    \hline
+    Material & $\rho_{\SI{20}{\degreeCelsius}}$ in $\frac{m\ohm \cdot mm^2}{m}$ & $\alpha$ in $K^{-1}$ \\
+    \hline
+    Alu & 28,6 & 0,0038 \\
+    \hline
+    Kupfer & 17,8 & 0,0039 \\
+    \hline
+    Silber & 16 & 0,0038 \\
+    \hline
+    Eisendraht & 120 & 0,0052 \\
+    \hline
+\end{tabular}
+\end{table}
+
+\item[]{\textbf{Wechselstromwiderstand}}
+% \textbf{Stromdichte (Skineffekt)}\\
+% \textbf{Eindringtiefe}\\
+% \textbf{Gesamt Betriebswiderstand}
+\begin{gather*}
+    J = J \cdot e^{-x/\delta}\\
+    \delta = \sqrt{ \frac{\rho}{\pi \cdot \mu_{0} \cdot f}}
+     = \sqrt{ \frac{1}{\pi \cdot \kappa \cdot \mu_{0} \cdot f}}
+\end{gather*}
+$J:$ Stromdichte (Leiterrand)\\
+$x:$ Abstand vom Leiterrand (Oberfläche)\\
+$\delta:$ Eindringtiefe (Skineffekt)\\
+
+\item[]{\textbf{Betriebs-Resistanzbelag}}
+\begin{gather*}
+    R_{b}' = R_{=}' \cdot F_{\vartheta} \cdot F_{S} = \frac{R_{b\mathtt{Seil}}'}{n_{\mathtt{Seil}}}
+\end{gather*}
+$F_S:$ Widerstandserhöhung durch Skineffekt
+\newpage
+
+\subsection{Induktivität}
+\textbf{Aüßere Ind. Einzelleiter} \textcolor{dgreen}{mag. Fluss}\\
+\textbf{-||- Doppelleiter}\\
+\textbf{Innere Ind. Einzelleiter} \textcolor{dgreen}{verketteter mag. Fluss}\\
+\textbf{-||- Doppelleiter}
+\begin{gather*}
+    \Phi_{a1} = \frac{\mu I l}{2 \pi} \cdot \ln \left( \frac{D-r}{r}\right)\\
+    L_{a} = \frac{2\Phi_{a1}}{I} = \frac{\mu l}{2 \pi} \cdot \ln \left( \frac{D}{r}\right)\\
+    \Psi_{i1} = \Psi_{i2} = \frac{\mu I l}{8 \pi}\\
+    L_{i} = \frac{2\Psi_{i1}}{I} = \frac{\mu l}{8 \pi}
+\end{gather*}
+
+\textbf{gesamt Induktivität}\\
+\textcolor{dgreen}{$\mu = \mu_{0}, D \gg r$}
+\begin{gather*}
+    L_{ges} = L_{a} + L_{i} = \frac{\mu l}{2\pi} \left( \ln \left(\frac{D}{r}\right) + \frac{1}{4}\right)\\
+    L' = \frac{L_{ges}}{l} = \frac{\mu }{2\pi} \left( \ln \left(\frac{D}{r}\right) + \frac{1}{4}\right)
+\end{gather*}
+
+\subsection{Reaktanzbelag}
+Metallmantel keine Schirmung! Für $D$ nicht $\gg r$!
+
+\textbf{1- oder 2-Phasig}
+\begin{equation*}
+    X_{b}' = \pi \left( 4 \ln \left( \frac{D}{r}\right) +1 \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]
+\end{equation*}
+
+\textbf{Einfach-Drehstromkabel}
+\begin{gather*}
+    X_{b}' = \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m}}{r}\right) +1 \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
+    D_{m} = \sqrt[3]{D_{12} \cdot D_{23} \cdot D_{31}}
+\end{gather*}
+
+\textbf{Bündelleiter}
+\begin{gather*}
+    X_{b}' = \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m}}{r_{B}}\right) + \frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
+    r_{B} = \sqrt[n]{n \cdot r \cdot r_{T}^{n-1}}\\
+    r_{T} = \frac{a}{2 \sin \frac{180 \degree}{n}}
+\end{gather*}
+Werden Bezeichnet nach: n x 2r / a
+
+\textbf{Doppel 3-Phasig Bündelleiter}
+\begin{gather*}
+    X_{b}' = \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m} \cdot D_{L1/L\RN{2}}}{r \cdot D_{L1/L\RN{1}}}\right) + 1 \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
+    D_{L1/L\RN{2}} = \sqrt[3]{D_{1\RN{2}} \cdot D_{2\RN{3}} \cdot D_{3\RN{1}}}\\
+    D_{L1/L\RN{1}} = \sqrt[3]{D_{1\RN{1}} \cdot D_{2\RN{2}} \cdot D_{3\RN{3}}}
+\end{gather*}
+Bei Asymmetrie (Phase zur Mastmitte)
+\begin{equation*}
+    D_{L1/L\RN{2}} = \sqrt[6]{D_{1\RN{2}} \cdot D_{2\RN{3}} \cdot D_{3\RN{1}} \cdot D_{1\RN{3}} \cdot D_{2\RN{1}} \cdot D_{3\RN{2}}}
+\end{equation*}
+\end{itemize}
+\clearpage
