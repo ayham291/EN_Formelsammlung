@@ -6,15 +6,15 @@ hängen hyperbolisch durch. (ab \SI{110}{k\volt}:)
 \end{equation*}
 \subsection{Resistanzbelag}
 \begin{itemize}
-\item[]{\textbf{Gleichstromwiderstand}}
+\item[]{\textbf{DC-Widerstand}}
 
 $A_{\mathit{eff}}:$ Wirksamer Querschnitt [$mm^2$]\\
 $F_{\vartheta}:$ Widerstandserhöhung durch Erwärmung\\
 $\vartheta_{max}:$ max. zul. Betriebstemp. des Leiterseils
-
 \begin{gather*}
     R_{\textcolor{purple}{=}}' = \frac{R_{=}}{l} = \frac{\rho_{20 \degree}}{A_{\mathit{eff}}}\cdot\frac{1}{km}\\
-    F_{\vartheta} = 1 + \alpha (\vartheta_{max} - 20\degree C) + \beta (\vartheta_{max} - 20\degree C)...
+    F_{\vartheta} = 1 + \alpha (\vartheta_{max} - 20\degree C)
+    % + \beta (\vartheta_{max} - 20\degree C)...
 \end{gather*}
 
 \begin{table}[h]
@@ -33,8 +33,9 @@ $\vartheta_{max}:$ max. zul. Betriebstemp. des Leiterseils
     \hline
 \end{tabular}
 \end{table}
+weitere Kenngrößen siehe F39\\
 
-\item[]{\textbf{Wechselstromwiderstand}}
+\item[]{\textbf{AC-Widerstand}}
 % \textbf{Stromdichte (Skineffekt)}\\
 % \textbf{Eindringtiefe}\\
 % \textbf{Gesamt Betriebswiderstand}
@@ -74,28 +75,38 @@ $F_S:$ Widerstandserhöhung durch Skineffekt
 \end{gather*}
 
 \subsection{Reaktanzbelag}
-Metallmantel keine Schirmung! Für $D$ nicht $\gg r$!
+Gleichungen für $f=50 \mathit{Hz}$\\
+Metallmantel keine Schirmung! Für $D$ nicht $\gg r$!\\
+Radius r-Werte siehe F39\\
 
-\textbf{1- oder 2-Phasig}
-\begin{equation*}
-    X_{b}' = \pi \left( 4 \ln \left( \frac{D}{r}\right) +1 \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]
-\end{equation*}
-
-\textbf{Einfach-Drehstromkabel}
+\textbf{2-Phasig/Wechelstrom}
 \begin{gather*}
-    X_{b}' = \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m}}{r}\right) +1 \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
-    D_{m} = \sqrt[3]{D_{12} \cdot D_{23} \cdot D_{31}}
+    L'_b = 4\cdot 10^{-7} \left[ \ln \left( \frac{D_m}{r} \right) + 0,25 \right] \left[\frac{H}{m} \right] \\
+    X_{b}'= \omega L'_b = \pi \left[ 4 \ln \left( \frac{D_m}{r}\right) +1 \right] \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]
 \end{gather*}
 
-\textbf{Bündelleiter}
-\begin{gather*}
-    X_{b}' = \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m}}{r_{B}}\right) + \frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
-    r_{B} = \sqrt[n]{n \cdot r \cdot r_{T}^{n-1}}\\
-    r_{T} = \frac{a}{2 \sin \frac{180 \degree}{n}}
-\end{gather*}
-Werden Bezeichnet nach: n x 2r / a
+\textbf{Drehstrom}
 
-\textbf{Doppel 3-Phasig Bündelleiter}
+    \item[]{\ul{Einfach-/Bündelleiter}}
+\begin{align*}
+    X_{b}' &= \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m}}{r_B}\right) +\frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
+    \vspace{5pt}
+    D_{m} &= \sqrt[3]{D_{12} \cdot D_{23} \cdot D_{31}}\\
+    r_B &= \sqrt[n]{n \cdot r \cdot r_{T}^{n-1}}\\
+    r_T &= \frac{a}{2 \sin \frac{180 \degree}{n}}
+\end{align*}
+
+$n:$ Anzahl Teilleiter (wenn $n>1 \Rightarrow$ Bündelleiter)\\
+$D_m$: Abstände bei Symmetrie der Phasen zur Mastmitte\\
+$D_{12}:$ Abstand $L1 - L2$ usw.\\
+$r_B:$ Ersatzradius (wenn $n=1$, dann $r_B = r$)\\
+$r_T:$ Radius Teilleiter (bei $n>1$)\\
+$a:$ Abstand Teilleiter (bei $n>1$)\\
+
+% Werden Bezeichnet nach: n x 2r / a
+
+
+\item[]{\ul{Doppelleiter}}
 \begin{gather*}
     X_{b}' = \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m} \cdot D_{L1/L\RN{2}}}{r \cdot D_{L1/L\RN{1}}}\right) + 1 \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
     D_{L1/L\RN{2}} = \sqrt[3]{D_{1\RN{2}} \cdot D_{2\RN{3}} \cdot D_{3\RN{1}}}\\
@@ -105,5 +116,13 @@ Bei Asymmetrie (Phase zur Mastmitte)
 \begin{equation*}
     D_{L1/L\RN{2}} = \sqrt[6]{D_{1\RN{2}} \cdot D_{2\RN{3}} \cdot D_{3\RN{1}} \cdot D_{1\RN{3}} \cdot D_{2\RN{1}} \cdot D_{3\RN{2}}}
 \end{equation*}
+\end{itemize}
+
+\subsection{Suszeptanzbelag (Blindleitwert)}
+\begin{itemize}
+    \item[]{\textbf{2-Phasig/Wechselstrom}}
+    \begin{align*}
+        B'_b = \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D_m}{r_B} \right)} \left[ \frac{\mu S}{km} \right]
+    \end{align*}
 \end{itemize}
 \clearpage
