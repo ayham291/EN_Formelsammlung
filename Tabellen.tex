@@ -1,5 +1,8 @@
 \onecolumn
 \section{Tabellen, Anhänge}
+% \begin{center}
+%     Wichtig: in Farbe ausdrucken!
+% \end{center}
 % \centering
 \large
 \textbf{F39 - Gleichstromwiderstand, Seildurchmesser, Sollquerschnitt (Freileitung)}
@@ -84,7 +87,7 @@
     \hline
     < 30 kV & vernachlässigbar \\
     \hline
-    100 kV & 4 - 5 \\
+    110 kV & 4 - 5 \\
     \hline
     220 kV & 2,5 - 3,5 \\
     \hline
@@ -104,30 +107,33 @@
 \newpage
 
 
-\textbf{F34 - Resistanzbelag $R'_{=}$ in $\frac{\Omega}{km}$ (Kabel)}
+\textbf{F34 - Resistanzbelag $\mathbf{R'_{=}}$ in $\mathbf{\frac{\Omega}{km}}$ (Kabel)}
 
-\makebox[\textwidth][c]
-{
-\begin{minipage}{0.5\textwidth}
+% \makebox[\textwidth][c]
+% {
+% \hspace{-5em}
+% \begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=0.35\columnwidth]{figures/f34_Kabel_Gleichstromwiderstand.png}
+% \end{minipage}
+% }
 
-\begin{tabular}{|c|c|}
-    \hline
-    Seiltyp & $X'_b \left[ \frac{\Omega}{km} \right]$ je Leiter \\
-    \hline
-    Einerseil & 0,40 \\
-    \hline
-    Zweierbündel & 0,30 \\
-    \hline
-    Viererbündel & 0,23 \\
-    \hline
-\end{tabular}
-\end{minipage}
-\hspace{-5em}
-\begin{minipage}[c]{0.5\textwidth}
-\includegraphics[width=0.8\columnwidth]{figures/f34_Kabel_Gleichstromwiderstand.png}
-\end{minipage}
-}
-
-\textbf{F37 - Widerstandserhöhung durch Proximityeffekt (Kabel)}
+\textbf{F37 - Widerstandserhöhung durch Proximityeffekt $\mathbf{F_P}$ (Kabel)}
 
 \includegraphics[width=0.96\columnwidth]{figures/F37_Kabel_Resistanzbelag_Proximityeffekt.png}
+
+
+\textbf{F42 - Verlustfaktor/$\mathbf{\varepsilon-}$Konstante von Isolierstoffen (Kabel)}
+
+\includegraphics[width=0.5\columnwidth]{figures/f42_verlustfaktor_e-konstante_isostoffe.png}
+
+\textbf{F40 - Reaktanzbelag $\mathbf{X'_b}$, Richtwerte (Kabel)}
+
+\includegraphics[width=0.7\columnwidth]{figures/f39_reaktanzbelag_kabel.png}
+
+\textbf{F43 - Suszeptanzbelag $\mathbf{B'_b}$ - Richtwerte Radialfeldkabel mit Masseisolierung $\varepsilon_r = 4$}
+
+\includegraphics[width=0.7\columnwidth]{figures/f43_kabel_radialfeldkabel_masseiso.png}
+
+\textbf{F44 - Suszeptanzbelag $\mathbf{B'_b}$ - Richtwerte (Kabel)}
+
+\includegraphics[width=0.6\columnwidth]{figures/f44_suszeptanzbelag_weitere_kabeltypen.png}
