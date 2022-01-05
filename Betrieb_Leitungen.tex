@@ -1,0 +1,48 @@
+\newpage
+\section{Betrieb von Leitungen}
+\subsection{Kenngrößen}
+
+\begin{itemize}
+    \item[] \textbf{Leitung mit Verlusten}
+    \begin{gather*}
+        \ul{\gamma} = \sqrt{(R'_b +jX'_b)\cdot(G'_b+jB'_b)}= \alpha \cdot j \beta\\
+        \ul{Z}_w = \sqrt{\dfrac{R'_b + jX'_b}{G'_b + jB'_b}}= |Z_w| \cdot e^{j\delta}
+    \end{gather*}
+
+    \indent $\alpha:$ Dämpfungskonstante\\
+    \indent $\beta:$ Phasenkonstante $[\frac{rad}{km} = \frac{180\degree}{\pi} \cdot \frac{1}{km} = \frac{\degree}{km}]$\\
+    \indent $Z_w:$ Wellenwiderstand
+
+    \item[] \textbf{Leitung ohne Verluste}
+        \begin{gather*}
+            R'_b = G'_b = 0\rightarrow \alpha = 0\\
+            |\beta| = \sqrt{X'_b \cdot B'_b} = \omega \cdot \sqrt{L'_b \cdot C'_b}\\
+            \ul{\gamma} = j \beta = j \sqrt{X'_b \cdot B'_b} = j \omega \cdot \sqrt{L'_b \cdot C'_b}\\
+            \delta = 0 \rightarrow |Z_w| = \sqrt{ \dfrac{X'_b}{B'_b} } = \sqrt{ \dfrac{L'_b}{B'_b} }\\
+            \text{Richtwerte:} \quad
+            Z_w \approx 400\: \ohm \qquad
+            \beta = \frac{0,06\degree}{km}
+        \end{gather*}
+
+\subsection{Ersatzschaltbilder (ESB)}
+
+\item[] \textbf{MS-/NS-Leitungen mit Verlusten}
+        \begin{gather*}
+            I_G, I_C, << I_L = I_{max} \rightarrow G'_b = B'_b = 0\\
+            \ul{I_1} = \ul{I}_L = \ul{I}_2 \qquad
+            \ul{U}_1 = d \ul{U} + \ul{U}_2\\
+            d \ul{U} = (R_L + jX_L) \cdot \ul{I}_L = (R'_b +jX'_b) \cdot l \cdot \ul{I}_L\\
+            \ul{Z}_L = R_L +jX_L \qquad \varphi_Z =\arctan \frac{X_L}{R_L} = \arctan \frac{X'_b}{R'_b}
+        \end{gather*}
+
+\item[] \textbf{\ul{Kurze} HS-/HöS-DS-Leitungen}
+
+    $U_{LL}$ > 100 kV bis $l_{max}$ = 220 km\\
+    $B'_b \neq 0 $ \qquad $R'_b = G'_b = 0$
+    \begin{gather*}
+        \ul{I}_1 = \ul{I}_{c1} + \ul{I}_1 \qquad
+    \end{gather*}
+
+
+
+\end{itemize}
