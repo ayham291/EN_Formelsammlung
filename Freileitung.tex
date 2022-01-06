@@ -92,8 +92,8 @@ Radius r-Werte siehe F39\\
     X_{b}' &= \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m}}{r_B}\right) +\frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
     \vspace{5pt}
     D_{m} &= \sqrt[3]{D_{12} \cdot D_{23} \cdot D_{31}}\\
-    r_B &= \sqrt[n]{n \cdot r \cdot r_{T}^{n-1}} \qquad
-    r_T = \frac{a}{2 \sin \dfrac{180 \degree}{n}}
+    r_B &= \sqrt[n]{n \cdot r \cdot r_{T}^{n-1}} \qquad r_T = \frac{a}{2 \sin \dfrac{180 \degree}{n}}\\
+    r_B &= \sqrt{r \cdot a} \qquad \textnormal{für n = 2}
 \end{align*}
 
 $n:$ Anzahl Teilleiter (wenn $n>1 \Rightarrow$ Bündelleiter)\\
@@ -137,15 +137,15 @@ $h:$ Höhe zw. L1 - Erde
 
 \item[]{\textbf{Drehstrom}}
 \subitem{\ul{Einfach-/Bündelleitung}}
-    \begin{gather*}
-        C'_b = \frac{2\cdot \pi \cdot \varepsilon_0}{ln \left( \dfrac{D_m}{r} \right)} \\
-        B'_b = \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D_m}{r} \right)} \left[ \frac{\mu S}{km} \right]\\
-        D_{m} = \sqrt[3]{D_{12} \cdot D_{23} \cdot D_{31}}\\
-        r_B = \sqrt[n]{n \cdot r \cdot r_{T}^{n-1}} \qquad
-        r_T = \frac{a}{2 \sin \dfrac{180 \degree}{n}}
-    \end{gather*}
+    \begin{align*}
+        C'_b &= \frac{2\cdot \pi \cdot \varepsilon_0}{ln \left( \dfrac{D_m}{r} \right)} \\
+        B'_b &= \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D_m}{r_B} \right)} \left[ \frac{\mu S}{km} \right]\\
+        D_{m} &= \sqrt[3]{D_{12} \cdot D_{23} \cdot D_{31}}\\
+        r_B &= \sqrt[n]{n \cdot r \cdot r_{T}^{n-1}} \qquad r_T = \frac{a}{2 \sin \dfrac{180 \degree}{n}} \\
+        r_B &= \sqrt{r \cdot a} \qquad \textnormal{für n = 2}
+    \end{align*}
 
-    Bei Bündelleitung $n>1 \Rightarrow r = r_B$\\
+    Bei Einfachleitung $n=1 \Rightarrow r_B = r$\\
 
 \subitem{\ul{Doppelleitung}}
     \begin{gather*}
@@ -156,8 +156,8 @@ $h:$ Höhe zw. L1 - Erde
 
 \subsection{Konduktanzbelag (Wirkleitwert)}
 \begin{equation*}
-    G'_b = \dfrac{P_{\mathit{VI}}}{U^2_{\mathit{LL}}}
+    G'_b = \dfrac{P_{\mathit{VI}}}{U^2_{\mathit{LL}}} \left[\dfrac{S}{km}\right]
 \end{equation*}
-$P_{\mathit{VI}}:$ Korona-/Isolationsverluste $\left[\dfrac{W}{m} \right]$\\
-$U_{\mathit{LL}}:$ Nennspannung, Leiter-Leiter
+$P_{\mathit{VI}}:$ Korona-/Isolationsverluste $\left[\dfrac{W}{km} \right]$\\
+$U_{\mathit{LL}}:$ Nennspannung, Leiter-Leiter (Bsp: 110kV, 220kV...)
 \end{itemize}
