@@ -60,7 +60,6 @@ $R_L$: Resistanz \qquad $X_L$: Reaktanz\\
 $B_L$: Suszeptanz \qquad $G_L$: Konduktanz\\
 
 Index $1/\ul{2}$: Größe am Anfang/\ul{Ende} der Leitung\\
-$dU$: Spannung am Längszweig\\
 
 \newpage
 \item[] \textbf{MS-/NS-Leitungen mit Verlusten}\\
@@ -71,6 +70,8 @@ $dU$: Spannung am Längszweig\\
             d \ul{U} = (R_L + jX_L) \cdot \ul{I}_L = (R'_b +jX'_b) \cdot l \cdot \ul{I}_L\\
             \ul{Z}_L = R_L +jX_L \qquad \varphi_Z =\arctan \frac{X_L}{R_L} = \arctan \frac{X'_b}{R'_b}
         \end{gather*}
+$dU$: Spannung am Längszweig\\
+$Z_L$: Impedanz am Längszweig\\
 
 \item[] \textbf{\ul{Kurze} HS-/HöS-DS-Freileitungen}
 
@@ -91,6 +92,15 @@ $dU$: Spannung am Längszweig\\
     \end{align*}
     $\ul{I}_1$: Ladestrom \qquad
     $Q_1:$ Ladeleistung\\
+
+    \textit{bei Betrieb natürliche Leistung}: $R_2 = Z_w = \ul{Z}_2$
+        \begin{gather*}
+            S_1 = S_2 = P_1 = P_2 = P_{nat} \quad
+            |\ul{U}_1| = |\ul{U}_2| \quad |I_1| = |I_2|\\
+            \ul{U}_1 = \ul{U}_2 \cdot(1-\frac{1}{2} \cdot B_L \cdot X_L + j\: \frac{X_L}{Z_w})\\
+            \ul{I}_1=  \frac{\ul{U}_2}{Z_w}+j\: \frac{B_L}{2}\cdot (\ul{U}_1 + \ul{U}_2)\\
+            \ul{I}_L=  \frac{\ul{U}_2}{Z_w}+j\: \frac{B_L}{2}\cdot \ul{U}_2\\
+        \end{gather*}
 
 \item[] \textbf{\ul{Lange} HS-/HöS-DS-Freileitungen}
 
