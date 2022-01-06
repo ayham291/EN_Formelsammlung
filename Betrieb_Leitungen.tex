@@ -8,17 +8,22 @@
         \ul{\gamma} = \sqrt{(R'_b +jX'_b)\cdot(G'_b+jB'_b)}= \alpha \cdot j \beta\\
         \ul{Z}_w = \sqrt{\dfrac{R'_b + jX'_b}{G'_b + jB'_b}}= |Z_w| \cdot e^{j\delta}
     \end{gather*}
+    \indent Falls Formel von $\ul{Z}_w$ nicht über TR berechenbar $\rightarrow$\\
+    Betrag: erst $\ul{Z}_w^2$, dann $\sqrt{|Z_w^2|}$ ermitteln \\
+    Phase: $0.5 \cdot \arg(\ul{Z}_w^2)$ \\
 
+    \indent $\gamma:$ Ausbreitungskonstante\\
     \indent $\alpha:$ Dämpfungskonstante\\
     \indent $\beta:$ Phasenkonstante $[\frac{rad}{km} = \frac{180\degree}{\pi} \cdot \frac{1}{km} = \frac{\degree}{km}]$\\
     \indent $Z_w:$ Wellenwiderstand\\
+    \indent $\delta:$ Phase des Wellenwiderstandes\\
 
-    \item[] \textbf{Leitung ohne Verluste}
+    \item[] \textbf{Leitung ohne Verluste}\\
+            $R'_b = G'_b = 0\rightarrow \alpha, \delta = 0$
         \begin{gather*}
-            R'_b = G'_b = 0\rightarrow \alpha = 0\\
-            |\beta| = \sqrt{X'_b \cdot B'_b} = \omega \cdot \sqrt{L'_b \cdot C'_b}\\
-            \ul{\gamma} = j \beta = j \sqrt{X'_b \cdot B'_b} = j \omega \cdot \sqrt{L'_b \cdot C'_b}\\
-            \delta = 0 \rightarrow |Z_w| = \sqrt{ \dfrac{X'_b}{B'_b} } = \sqrt{ \dfrac{L'_b}{B'_b} }
+            \ul{\gamma} = j \beta = j \sqrt{X'_b \cdot B'_b} = j \omega \cdot \sqrt{L'_b \cdot C'_b}\left[\frac{\degree}{km} \right]\\
+            |\beta| = \sqrt{X'_b \cdot B'_b} \cdot \frac{180\degree}{\pi} = \omega \cdot \sqrt{L'_b \cdot C'_b} \\
+            |Z_w| = \sqrt{ \dfrac{X'_b}{B'_b} } = \sqrt{ \dfrac{L'_b}{B'_b} }
         \end{gather*}
     Richtwerte:
             $Z_w \approx 400\: \ohm \qquad \beta = \frac{0,06\degree}{km}$\\
@@ -32,7 +37,7 @@
             P_{nat} = 3 \cdot U_{LE} \cdot I_{nat} = \frac{U^2_{LL}}{Z_w} = \frac{3 \cdot U_{LE}}{Z_w}\\
             Q_L = 3 \cdot X_L \cdot I_L^2 \qquad Q_C = 3 \cdot B_L \cdot U^2_{LE}\\
             \frac{Q_V}{Q_C} = \left(\frac{S_u}{P_{nat}} \right)^2-1\\
-            Q_v = Q_L - Q_C = Q_C \cdot (\frac{Q_L}{Q_C}-1)\\
+            Q_v = Q_1 - Q_2 = Q_L - Q_C = Q_C \cdot (\frac{Q_L}{Q_C}-1)\\
             S_u = 3 \cdot U_{LE} \cdot {I_L} = \sqrt{3} \cdot U_{LL} \cdot I_L
         \end{gather*}
 
@@ -41,11 +46,26 @@
 
 \subsection{Ersatzschaltbilder (ESB)}
 
-Index 1/\ul{2}: Größe am Anfang/\ul{Ende} der Leitung\\
+\textbf{Kenngrößen}\\
 
-\item[] \textbf{MS-/NS-Leitungen mit Verlusten}
+\begin{tabular}[h]{c|c|c}
+    & Längszweig & Querzweig $\parallel$ \\
+    \hline
+    Wirk & $R_L = R'_b \cdot l$ & $G_L= G'_b \cdot l$\\
+    Blind & $X_L = X'_b \cdot l$ & $B_L = B'_b \cdot l$\\
+    % Blind & $X_L = X'_b \cdot l$ & $B_L = B_'b \cdot l$\\
+\end{tabular}\\
+
+$R_L$: Resistanz \qquad $X_L$: Reaktanz\\
+$B_L$: Suszeptanz \qquad $G_L$: Konduktanz\\
+
+Index $1/\ul{2}$: Größe am Anfang/\ul{Ende} der Leitung\\
+$dU$: Spannung am Längszweig\\
+
+\newpage
+\item[] \textbf{MS-/NS-Leitungen mit Verlusten}\\
+    $I_G, I_C<< I_L \Rightarrow G'_b = B'_b = 0$
         \begin{gather*}
-            I_G, I_C, << I_L = I_{max} \rightarrow G'_b = B'_b = 0\\
             \ul{I_1} = \ul{I}_L = \ul{I}_2 \qquad
             \ul{U}_1 = d \ul{U} + \ul{U}_2\\
             d \ul{U} = (R_L + jX_L) \cdot \ul{I}_L = (R'_b +jX'_b) \cdot l \cdot \ul{I}_L\\
@@ -55,20 +75,43 @@ Index 1/\ul{2}: Größe am Anfang/\ul{Ende} der Leitung\\
 \item[] \textbf{\ul{Kurze} HS-/HöS-DS-Freileitungen}
 
     $U_{LL}$ > 100 kV für $l\leq$ 220 km\\
-    $B'_b \neq 0 $ \qquad $R'_b = G'_b = 0$
+
+    \ul{ohne Verluste:} ($R'_b = G'_b = 0$)
     \begin{gather*}
-        \ul{I}_{C1,2} = j \: 0,5 \cdot B'_b \cdot l \cdot \ul{U}_{1,2}\\
-        \ul{I}_1 = \ul{I}_{C1} + \ul{I}_L \qquad  \ul{I}_L =  \ul{I}_{C2} +  \ul{I}_2\\
-        \ul{I}_1 =  \ul{I}_2 + j \: 0.5 \cdot B_L \cdot ( \ul{U}_1 + \ul{U}_2)\\
+        B'_1 = B'_2 = \frac{B'_b}{2} \qquad
+        \ul{I}_{C1/2} = j \: B_{1/2} \cdot \ul{U}_{1/2}\\
+        \ul{I}_1 = \ul{I}_{C1} + \ul{I}_L \qquad  \ul{I}_L =  \ul{I}_{C2} +  \ul{I}_2
          % \ul{U}_1 = d\ul{U} + \ul{U}_2 = (R_L + jX_L) \cdot \ul{I}_L + \ul{U}_2\\
-         \ul{U}_1 = (R_L + jX_L)\cdot (\ul{I}_2 + j \: 0.5 \cdot B_L \cdot \ul{U}_2)
     \end{gather*}
+    \textit{bei Leerlauf:} $\ul{I}_2 = 0 \rightarrow \ul{I}_{C2} = \ul{I}_L$
+    \begin{align*}
+        \ul{U}_1 &= (1 - \frac{X_L\cdot B_L}{2}) \cdot \ul{U}_2\\
+        \ul{I}_1 &=  \ul{I}_2 + j \: 0.5 \cdot B_L \cdot ( \ul{U}_1 + \ul{U}_2)\\
+        Q_1 &= 3\cdot U_1 \cdot I_1
+    \end{align*}
+    $\ul{I}_1$: Ladestrom \qquad
+    $Q_1:$ Ladeleistung\\
 
 \item[] \textbf{\ul{Lange} HS-/HöS-DS-Freileitungen}
 
     $U_{LL}$ > 100 kV für $l>$ 220 km\\
+
+    \ul{ohne Verluste} ($R'_b = G'_b = 0$)
+    \begin{align*}
+        \ul{U}_1 &= \ul{U}_2 \cdot \cos(\beta l) + j \cdot \ul{I}_2 \cdot Z_w \cdot \sin (\beta l)\\
+        \ul{I}_1 &= \ul{I}_2 \cdot \cos(\beta l) + j \cdot \frac{\ul{U}_2}{Z_w} \cdot \sin (\beta l)
+    \end{align*}
+    \textit{bei Leerlauf:} $\ul{I}_2 = 0$, $\ul{Z}_2 \rightarrow \infty$\\
+    \textit{bei Betrieb mit $P_{nat}$ :} $\varphi = \beta l$
     \begin{gather*}
-        test
+        \ul{U}_1 = |\ul{U}_2| \cdot e^{j\varphi} \qquad
+        \ul{I}_1 = |\ul{I}_2| \cdot e^{j\varphi}\\
+        \ul{S}_1 = \ul{S}_2 = \frac{3 \cdot U_{2,LE}^2}{Z_w} = P_{nat}
     \end{gather*}
 
+    \ul{mit Verlusten}
+    \begin{align*}
+        \ul{U}_1 &= \ul{U}_2 \cdot \cosh(\ul{\gamma} l) + \ul{I}_2 \cdot \ul{Z}_w \cdot \sinh(\ul{\gamma} l)\\
+        \ul{I}_1 &= \ul{I}_2 \cdot \cosh(\ul{\gamma} l) + \frac{\ul{U}_2}{\ul{Z}_w}\cdot \sinh(\ul{\gamma} l)\\
+    \end{align*}
 \end{itemize}
