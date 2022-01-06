@@ -1,38 +1,50 @@
 \section{Generator}
-\textbf{Induktionsgesetz}\\
-\textbf{Polpaarzahl}
+\textbf{Induktionsgesetz}
 \begin{align*}
-    U_{ieff} &= 4,44 \cdot N \cdot f \cdot B_= \cdot \hat{A}_{Fe} \\
-    n &= \dfrac{3000}{p} \left[ \frac{1}{min}\right] \qquad \textnormal{für f = 50Hz}
+    U_{ieff} &= 4,44 \cdot N \cdot f \cdot B_= \cdot \hat{A}_{Fe}
 \end{align*}
 
-\subsection{Ersatzschaltbild (ESB)}
+\textbf{Polpaarzahl}
 \begin{align*}
-    \ul{U}_p &= \ul{U} + (R_S + jX_S) \cdot \ul{I} \qquad \textnormal{$R_S$ wird meist vernachl.}\\
-    1 &= \left( \dfrac{U}{U_p} \right)^2 - 2 \cdot \left( \dfrac{U \cdot I}{U_p \cdot I_k}\right) sin(\varphi) + \left(\dfrac{I}{I_k}\right)^2
+    n &= \dfrac{3000}{p} \left[ \frac{1}{min}\right] \qquad \textnormal{für f = 50Hz}
+    \end{align*}
+
+\subsection{Ersatzschaltbild (ESB)}
+Vernachlässigung von $R_S = 0$
+\begin{align*}
+    \ul{I} &= I_W +jI_B \qquad I_W = I \cdot \cos(\varphi) \quad I_B = \ul{I}\cdot (\pm sin(\varphi))\\
+    \ul{U}_p &= \ul{U} +jX_S \cdot \ul{I} \qquad
+    U_p = \sqrt{(U+X\cdot I_B)^2 \cdot (X\cdot I_W)^2}\\
+    % \qquad \textnormal{$R_S$ wird meist vernachl.}\\
+    1 &= \left( \dfrac{U}{U_p} \right)^2 - 2 \cdot \left( \dfrac{U \cdot I}{U_p \cdot I_k}\right) \cdot (\pm \sin(\varphi)) + \left(\dfrac{I}{I_k}\right)^2
 \end{align*}
+
+$\ul{U}, \ul{I}$: Klemmen \quad $U_p$: Polrad (Quelle) \quad $X$: Statorreaktanz \\
+$\varphi$: $\sphericalangle (U, I)$ \qquad $\vartheta$:$\sphericalangle (U, U_p)$ \qquad $I_k$: Kurzschluss
 
 \subsection{Alleinbetrieb (Inselbetrieb)}
 \subsubsection{Reine Wirkleistung}
+$cos(\varphi) = 1$
 \begin{align*}
-    cos(\varphi) &= 1\\
     1 &= \left( \dfrac{U}{U_p} \right)^2 + \left(\dfrac{I}{I_k}\right)^2
 \end{align*}
 
 \subsubsection{Reine Blindleistung}
+$    sin(\varphi) = \pm1$
 \begin{align*}
-    sin(\varphi) &= 1 \rightarrow (ind.) \qquad =-1 \rightarrow (kap.)\\
     \left( \dfrac{U}{U_p} \right) &= 1 \mp \left(\dfrac{I}{I_k}\right)
 \end{align*}
 
 \subsection{Leistung}
+$P_{mech,zu} = P_{el,ab} \neq f(\vartheta) \rightarrow$ für $\vartheta < 90\degree$ stabil\\
 \begin{align*}
-    S_{Bez} &= 3 \cdot \dfrac{U^2}{X_S}\\
-    \dfrac{P}{S_{Bez}} &= \left(\dfrac{U_p}{U}\right) sin(\upsilon)\\
-    P_{mech,zu} &= P_{el,ab} \neq f(\upsilon) \rightarrow \textnormal{für $\upsilon < 90\degree$ stabil}\\
-    \dfrac{Q}{S_{Bez}} &= \left(\left(\dfrac{U_p}{U}\right) cos(\upsilon)\right) -1\\
-    P_{Kipp} &= 3 \cdot \dfrac{U \cdot U_p}{X_S}
+    sin(\vartheta) = \frac{XI_W}{U_p} & \qquad P = 3 \cdot \frac{U\cdot U_p}{X} \cdot sin(\vartheta)\\
+    S_{Bez} = 3 \cdot \dfrac{U^2}{X} & \qquad P_{Kipp} = P_{max} = 3\cdot U \cdot \frac{U_p}{X}\\
+    \dfrac{P}{S_{Bez}} &= \left(\dfrac{U_p}{U}\right) \cdot sin(\vartheta)\\
+    \dfrac{Q}{S_{Bez}} &= \left[\left(\dfrac{U_p}{U}\right) \cdot cos(\vartheta)\right] -1\\
+    % P_{Kipp} &= 3 \cdot \dfrac{U \cdot U_p}{X_S}
 \end{align*}
+
 
 \subsection{Regelung}
 
