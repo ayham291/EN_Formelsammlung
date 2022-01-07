@@ -31,7 +31,7 @@
     \dfrac{P}{S_{Bez}} &= \left(\dfrac{U_p}{U}\right) sin(\upsilon)\\
     P_{mech,zu} &= P_{el,ab} \neq f(\upsilon) \rightarrow \textnormal{für $\upsilon < 90\degree$ stabil}\\
     \dfrac{Q}{S_{Bez}} &= \left(\left(\dfrac{U_p}{U}\right) cos(\upsilon)\right) -1\\
-    P_{Kipp} &= 3 \cdot \dfrac{U \cdot U_p}{X_S}
+    P_{Kipp} &= 3 \cdot \dfrac{U \cdot U_p}{X_S} 
 \end{align*}
 
 \subsection{Regelung}
@@ -53,6 +53,11 @@
 \indent $U_p =$ const $\rightarrow I_b = f(I_w)$\\
 \indent bei $0,9 \leq \frac{P}{S_{Bez}} \leq 1,75$ ergibt sich\\
 \indent $0 \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
+
+\begin{align*}
+    \upsilon_{neu} &= sin^{-1}\left( \dfrac{P_{neu} \cdot X_S}{3 \cdot U \cdot U_p}\right)\\
+    Q_{neu} &= \left( \dfrac{3 \cdot U^2}{X_s}\right) \cdot \left( \left( \dfrac{U_p}{U} cos( \upsilon_{neu})\right)-1\right)
+\end{align*}
 
 \textbf{Reiner Blindleistung (Phasenschieberbetrieb)}\\
 \indent $P = 0 \rightarrow I_w= 0$ \\
