@@ -1,4 +1,5 @@
 \section{Generator}
+$U_p \sim I_{Err}$\\
 \textbf{Induktionsgesetz}\\
 \textbf{Polpaarzahl}
 \begin{align*}
@@ -37,28 +38,31 @@
 
 \subsection{Regelung}
 
+\begin{align*}
+    \upsilon_{neu} &= sin^{-1}\left( \dfrac{P_{neu} \cdot X_S}{3 \cdot U \cdot U_{p,neu}}\right)\\
+    Q_{neu} &= \left( \dfrac{3 \cdot U^2}{X_s}\right) \cdot \left( \left( \dfrac{U_{p,neu}}{U} cos( \upsilon_{neu})\right)-1\right)
+\end{align*}
+
 \textbf{Konstate Scheinleistung}\\
 \indent $S = S_{max} =$ const\\
 \indent $\ul{U}=$ const, $|\ul{I}| =$ const\\
 \indent $I_w =$ var. $\rightarrow P_{zu}=$ var.\\
 \indent $I_b =$ var. $\rightarrow I_{Err}, U_p =$ var.\\
 
-\textbf{Blindleistung}\\
+\textbf{Blindleistung (Polradspannung var.)}\\
 \indent $P =$ const $\rightarrow I_w= $ const\\
 \indent $Q =$ var. $\rightarrow I_b = $ var. $\rightarrow I_{Err}=$ var.\\
 \indent bei $1 \leq \frac{U_p}{U} \leq 2$ ergibt sich \\
 \indent $-0,5 (kap.) \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
 
 \textbf{Turbinenventildrosselung}\\
+$U_p$, $ P$, $Q$ und $\upsilon$ sind abhängig voneinander. \\
+Aus zwei Größen $\rightarrow$ die anderen Beiden\\
 \indent $P =$ var. $\rightarrow I_w= $ var. $\rightarrow Q =$ var.\\
 \indent $U_p =$ const $\rightarrow I_b = f(I_w)$\\
 \indent bei $0,9 \leq \frac{P}{S_{Bez}} \leq 1,75$ ergibt sich\\
 \indent $0 \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
 
-\begin{align*}
-    \upsilon_{neu} &= sin^{-1}\left( \dfrac{P_{neu} \cdot X_S}{3 \cdot U \cdot U_p}\right)\\
-    Q_{neu} &= \left( \dfrac{3 \cdot U^2}{X_s}\right) \cdot \left( \left( \dfrac{U_p}{U} cos( \upsilon_{neu})\right)-1\right)
-\end{align*}
 
 \textbf{Reiner Blindleistung (Phasenschieberbetrieb)}\\
 \indent $P = 0 \rightarrow I_w= 0$ \\
