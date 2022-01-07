@@ -1,10 +1,15 @@
 \clearpage
 \section{Generator}
+<<<<<<< HEAD
 \textbf{Induktionsgesetz}
 \begin{align*}
     U_{ieff} &= 4,44 \cdot N \cdot f \cdot B_= \cdot \hat{A}_{Fe}
 \end{align*}
 
+=======
+$U_p \sim I_{Err}$\\
+\textbf{Induktionsgesetz}\\
+>>>>>>> 374eef8c86957ba02290d6a809e9d201947f6cd2
 \textbf{Polpaarzahl}
 \begin{align*}
     n &= \dfrac{3000}{p} \left[ \frac{1}{min}\right] \qquad \textnormal{für f = 50Hz}
@@ -39,15 +44,29 @@ $    sin(\varphi) = \pm1$
 \subsection{Leistung}
 $P_{mech,zu} = P_{el,ab} \neq f(\vartheta) \rightarrow$ für $\vartheta < 90\degree$ stabil\\
 \begin{align*}
+<<<<<<< HEAD
     sin(\vartheta) = \frac{XI_W}{U_p} & \qquad P = 3 \cdot \frac{U\cdot U_p}{X} \cdot sin(\vartheta)\\
     S_{Bez} = 3 \cdot \dfrac{U^2}{X} & \qquad P_{Kipp} = P_{max} = 3\cdot U \cdot \frac{U_p}{X}\\
     \dfrac{P}{S_{Bez}} &= \left(\dfrac{U_p}{U}\right) \cdot sin(\vartheta)\\
     \dfrac{Q}{S_{Bez}} &= \left[\left(\dfrac{U_p}{U}\right) \cdot cos(\vartheta)\right] -1\\
     % P_{Kipp} &= 3 \cdot \dfrac{U \cdot U_p}{X_S}
+=======
+    S_{Bez} &= 3 \cdot \dfrac{U^2}{X_S}\\
+    \dfrac{P}{S_{Bez}} &= \left(\dfrac{U_p}{U}\right) sin(\upsilon)\\
+    P &= \dfrac{3 \cdot U \cdot U_p}{X_S} \cdot sin (\upsilon)\\
+    P_{mech,zu} &= P_{el,ab} \neq f(\upsilon) \rightarrow \textnormal{für $\upsilon < 90\degree$ stabil}\\
+    P_{Kipp} &= 3 \cdot \dfrac{U \cdot U_p}{X_S}\\
+    \dfrac{Q}{S_{Bez}} &= \left(\left(\dfrac{U_p}{U}\right) cos(\upsilon)\right) -1    
+>>>>>>> 374eef8c86957ba02290d6a809e9d201947f6cd2
 \end{align*}
 
 
 \subsection{Regelung}
+
+\begin{align*}
+    \upsilon_{neu} &= sin^{-1}\left( \dfrac{P_{neu} \cdot X_S}{3 \cdot U \cdot U_{p,neu}}\right)\\
+    Q_{neu} &= \left( \dfrac{3 \cdot U^2}{X_s}\right) \cdot \left( \left( \dfrac{U_{p,neu}}{U} cos( \upsilon_{neu})\right)-1\right)
+\end{align*}
 
 \textbf{Konstate Scheinleistung}\\
 \indent $S = S_{max} =$ const\\
@@ -55,17 +74,20 @@ $P_{mech,zu} = P_{el,ab} \neq f(\vartheta) \rightarrow$ für $\vartheta < 90\deg
 \indent $I_w =$ var. $\rightarrow P_{zu}=$ var.\\
 \indent $I_b =$ var. $\rightarrow I_{Err}, U_p =$ var.\\
 
-\textbf{Blindleistung}\\
+\textbf{Blindleistung (Polradspannung var.)}\\
 \indent $P =$ const $\rightarrow I_w= $ const\\
 \indent $Q =$ var. $\rightarrow I_b = $ var. $\rightarrow I_{Err}=$ var.\\
 \indent bei $1 \leq \frac{U_p}{U} \leq 2$ ergibt sich \\
 \indent $-0,5 (kap.) \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
 
 \textbf{Turbinenventildrosselung}\\
+$U_p$, $ P$, $Q$ und $\upsilon$ sind abhängig voneinander. \\
+Aus zwei Größen $\rightarrow$ die anderen Beiden\\
 \indent $P =$ var. $\rightarrow I_w= $ var. $\rightarrow Q =$ var.\\
 \indent $U_p =$ const $\rightarrow I_b = f(I_w)$\\
 \indent bei $0,9 \leq \frac{P}{S_{Bez}} \leq 1,75$ ergibt sich\\
 \indent $0 \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
+
 
 \textbf{Reiner Blindleistung (Phasenschieberbetrieb)}\\
 \indent $P = 0 \rightarrow I_w= 0$ \\

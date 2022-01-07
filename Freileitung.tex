@@ -11,11 +11,11 @@ hängen hyperbolisch durch. (ab \SI{110}{k\volt}:)
 $A_{\mathit{eff}}:$ Wirksamer Querschnitt [$mm^2$]\\
 $F_{\vartheta}:$ Widerstandserhöhung durch Erwärmung\\
 $\vartheta_{max}:$ max. zul. Betriebstemp. des Leiterseils
-\begin{gather*}
-    R_{\textcolor{purple}{=}}' = \frac{R_{=}}{l} = \frac{\rho_{20 \degree}}{A_{\mathit{eff}}}\cdot\frac{1}{km}\\
-    F_{\vartheta} = 1 + \alpha (\vartheta_{max} - 20\degree C)
+\begin{align*}
+    R_{\textcolor{purple}{=}}' &= \frac{R_{=}}{l} = \frac{\rho_{20 \degree}}{A_{\mathit{eff}}}\cdot\frac{1}{km}\\
+    F_{\vartheta} &= 1 + \alpha (\vartheta_{max} - 20\degree C)
     % + \beta (\vartheta_{max} - 20\degree C)...
-\end{gather*}
+\end{align*}
 
 \begin{table}[h]
 \centering
@@ -39,19 +39,19 @@ weitere Kenngrößen siehe F39\\
 % \textbf{Stromdichte (Skineffekt)}\\
 % \textbf{Eindringtiefe}\\
 % \textbf{Gesamt Betriebswiderstand}
-\begin{gather*}
-    J = J \cdot e^{-x/\delta}\\
-    \delta = \sqrt{ \frac{\rho}{\pi \cdot \mu_{0} \cdot f}}
+\begin{align*}
+    J &= J \cdot e^{-x/\delta}\\
+    \delta &= \sqrt{ \frac{\rho}{\pi \cdot \mu_{0} \cdot f}}
      = \sqrt{ \frac{1}{\pi \cdot \kappa \cdot \mu_{0} \cdot f}}
-\end{gather*}
+\end{align*}
 $J:$ Stromdichte (Leiterrand)\\
 $x:$ Abstand vom Leiterrand (Oberfläche)\\
 $\delta:$ Eindringtiefe (Skineffekt)\\
 
 \item[]{\textbf{Betriebs-Resistanzbelag}}
-\begin{gather*}
-    R_{b}' = R_{=}' \cdot F_{\vartheta} \cdot F_{S} = \frac{R_{b\mathtt{Seil}}'}{n_{\mathtt{Seil}}}
-\end{gather*}
+\begin{align*}
+    R_{b}' &= R_{=}' \cdot F_{\vartheta} \cdot F_{S} = \frac{R_{b\mathtt{Seil}}'}{n_{\mathtt{Seil}}}
+\end{align*}
 $F_S:$ Widerstandserhöhung durch Skineffekt
 \newpage
 
@@ -60,19 +60,19 @@ $F_S:$ Widerstandserhöhung durch Skineffekt
 \textbf{-||- Doppelleiter}\\
 \textbf{Innere Ind. Einzelleiter} \textcolor{dgreen}{verketteter mag. Fluss}\\
 \textbf{-||- Doppelleiter}
-\begin{gather*}
-    \Phi_{a1} = \frac{\mu I l}{2 \pi} \cdot \ln \left( \frac{D-r}{r}\right)\\
-    L_{a} = \frac{2\Phi_{a1}}{I} = \frac{\mu l}{2 \pi} \cdot \ln \left( \frac{D}{r}\right)\\
-    \Psi_{i1} = \Psi_{i2} = \frac{\mu I l}{8 \pi}\\
-    L_{i} = \frac{2\Psi_{i1}}{I} = \frac{\mu l}{8 \pi}
-\end{gather*}
+\begin{align*}
+    \Phi_{a1} &= \frac{\mu I l}{2 \pi} \cdot \ln \left( \frac{D-r}{r}\right)\\
+    L_{a} &= \frac{2\Phi_{a1}}{I} = \frac{\mu l}{2 \pi} \cdot \ln \left( \frac{D}{r}\right)\\
+    \Psi_{i1} &= \Psi_{i2} = \frac{\mu I l}{8 \pi}\\
+    L_{i} &= \frac{2\Psi_{i1}}{I} = \frac{\mu l}{8 \pi}
+\end{align*}
 
 \textbf{gesamt Induktivität}\\
 \textcolor{dgreen}{$\mu = \mu_{0}, D \gg r$}
-\begin{gather*}
-    L_{ges} = L_{a} + L_{i} = \frac{\mu l}{2\pi} \left( \ln \left(\frac{D}{r}\right) + \frac{1}{4}\right)\\
-    L' = \frac{L_{ges}}{l} = \frac{\mu }{2\pi} \left( \ln \left(\frac{D}{r}\right) + \frac{1}{4}\right)
-\end{gather*}
+\begin{align*}
+    L_{ges} &= L_{a} + L_{i} = \frac{\mu l}{2\pi} \left( \ln \left(\frac{D}{r}\right) + \frac{1}{4}\right)\\
+    L' &= \frac{L_{ges}}{l} = \frac{\mu }{2\pi} \left( \ln \left(\frac{D}{r}\right) + \frac{1}{4}\right)
+\end{align*}
 
 \subsection{Reaktanzbelag}
 Gleichungen für $f=50 \mathit{Hz}$\\
@@ -80,10 +80,10 @@ Metallmantel keine Schirmung! Für $D$ nicht $\gg r$!\\
 Radius r-Werte siehe F39\\
 
 \textbf{2-Phasig/Wechelstrom}
-\begin{gather*}
-    L'_b = 4\cdot 10^{-7} \left[ \ln \left( \frac{D_m}{r} \right) + 0,25 \right] \left[\frac{H}{m} \right] \\
-    X_{b}'= \omega L'_b = \pi \left[ 4 \ln \left( \frac{D_m}{r}\right) +1 \right] \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]
-\end{gather*}
+\begin{align*}
+    L'_b &= 4\cdot 10^{-7} \left[ \ln \left( \frac{D_m}{r} \right) + 0,25 \right] \left[\frac{H}{m} \right] \\
+    X_{b}' &= \omega L'_b = \pi \left[ 4 \ln \left( \frac{D_m}{r}\right) +1 \right] \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]
+\end{align*}
 
 \textbf{Drehstrom}
 
@@ -107,11 +107,11 @@ $a:$ Abstand Teilleiter (bei $n>1$)\\
 
 
 \subitem{\ul{Doppelleitung}}
-\begin{gather*}
-    X_{b}' = \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m} \cdot D_{L1/L\RN{2}}}{r \cdot D_{L1/L\RN{1}}}\right) + \frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
-    D_{L1/L\RN{2}} = \sqrt[3]{D_{1,\RN{2}} \cdot D_{2,\RN{3}} \cdot D_{3,\RN{1}}}\\
-    D_{L1/L\RN{1}} = \sqrt[3]{D_{1,\RN{1}} \cdot D_{2,\RN{2}} \cdot D_{3,\RN{3}}}
-\end{gather*}
+\begin{align*}
+    X_{b}' &= \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m} \cdot D_{L1/L\RN{2}}}{r \cdot D_{L1/L\RN{1}}}\right) + \frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
+    D_{L1/L\RN{2}} &= \sqrt[3]{D_{1,\RN{2}} \cdot D_{2,\RN{3}} \cdot D_{3,\RN{1}}}\\
+    D_{L1/L\RN{1}} &= \sqrt[3]{D_{1,\RN{1}} \cdot D_{2,\RN{2}} \cdot D_{3,\RN{3}}}
+\end{align*}
 Bei Asymmetrie (Phase zur Mastmitte)
 \begin{equation*}
     D_{L1/L\RN{2}} = \sqrt[6]{D_{1,\RN{2}} \cdot D_{2,\RN{3}} \cdot D_{3,\RN{1}} \cdot D_{1,\RN{3}} \cdot D_{2,\RN{1}} \cdot D_{3,\RN{2}}}
@@ -129,10 +129,10 @@ $h:$ Höhe zw. L1 - Erde
 
 \subsection{Suszeptanzbelag (Blindleitwert)}
     \item[]{\textbf{2-Phasig/Wechselstrom}}
-    \begin{gather*}
-        C'_b = C'_{1E}\\
-        B'_b = \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D}{r} \right)} \left[ \frac{\mu S}{km} \right]
-    \end{gather*}
+    \begin{align*}
+        C'_b &= C'_{1E}\\
+        B'_b &= \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D}{r} \right)} \left[ \frac{\mu S}{km} \right]
+    \end{align*}
     $B'_b:$ gilt für $f$ = 50 Hz\\
 
 \item[]{\textbf{Drehstrom}}
@@ -148,11 +148,11 @@ $h:$ Höhe zw. L1 - Erde
     Bei Einfachleitung $n=1 \Rightarrow r_B = r$\\
 
 \subitem{\ul{Doppelleitung}}
-    \begin{gather*}
-        B'_b = \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D_m \cdot D_{L1/L\RN{2}}}{r_B \cdot D_{L1/L \RN{1}}} \right)} \left[ \frac{\mu S}{km} \right]\\
-        D_{L1/L\RN{2}} = \sqrt[3]{D_{1,\RN{2}} \cdot D_{2,\RN{3}} \cdot D_{3,\RN{1}}}\\
-        D_{L1/L\RN{1}} = \sqrt[3]{D_{1,\RN{1}} \cdot D_{2,\RN{2}} \cdot D_{3,\RN{3}}}\\
-    \end{gather*}
+    \begin{align*}
+        B'_b &= \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D_m \cdot D_{L1/L\RN{2}}}{r_B \cdot D_{L1/L \RN{1}}} \right)} \left[ \frac{\mu S}{km} \right]\\
+        D_{L1/L\RN{2}} &= \sqrt[3]{D_{1,\RN{2}} \cdot D_{2,\RN{3}} \cdot D_{3,\RN{1}}}\\
+        D_{L1/L\RN{1}} &= \sqrt[3]{D_{1,\RN{1}} \cdot D_{2,\RN{2}} \cdot D_{3,\RN{3}}}\\
+    \end{align*}
 
 \subsection{Konduktanzbelag (Wirkleitwert)}
 \begin{equation*}
