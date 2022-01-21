@@ -27,7 +27,7 @@
         \vspace{5pt}
         \textbf{Strom} & \textbf{Spannung} & \textbf{Impedanz} \\
         \vspace{5pt}
-        $\dfrac{U_{1}}{U_{2}} = \dfrac{N_{1}}{N_{2}} = \ddot{u}$ & $\dfrac{I_{1}}{I_{2}} = \dfrac{N_{1}}{N_{2}} = \dfrac{1}{\ddot{u}}$ & $R'_2 = \ddot{u}^2 \cdot R'_2$\\
+        $\dfrac{U_{1}}{U_{2}} = \dfrac{N_{1}}{N_{2}} = \ddot{u}$ & $\dfrac{I_{1}}{I_{2}} = \dfrac{N_{1}}{N_{2}} = \dfrac{1}{\ddot{u}}$ & $R'_{2} = \ddot{u}^2 \cdot R_{2}$\\
         \vspace{5pt}
         $\underline{U}'_{2}  = \ddot{u} \cdot \underline{U}_{2}$ & $\underline{I}'_{2} = \underline{I}_{2} \cdot \dfrac{1}{\ddot{u}}$ & $Z_1 = \ddot{u} \cdot Z_2$\\
     \end{tabular}\\
@@ -55,6 +55,12 @@
         S_{1} = S_{2} = S_{D}
     \end{equation*}
 
+\item[] {\textbf{Bemessungsscheinleistung [VA]}}
+    \begin{align*}
+        S_{rT} &= \sqrt{3} \cdot U_{LL,OS} \cdot I_{L,OS}\\
+        S_{rT} &= 3 \cdot U_{LE,OS} \cdot I_{L,OS}
+        \end{align*}
+
 % \end{itemize}
 % \textcolor{dgreen}{$R_{T}$ wird meist vernachlässigt}
 % \vspace{-2em}
@@ -62,6 +68,7 @@
 % \vspace{-2em}
 
 \begin{gather*}
+    U_1 = U_{OS} \qquad U'_2 = U_{US}\\
     R_{T} + jX_{T} = (R_1+R_2')+j(X_{1\sigma}+X'_{2\sigma})\\
     Z_{T} = R_{T} + jX_{T}\\
     U_1 = (R_T + jX_T) \cdot I_1 + U'_2
@@ -79,9 +86,14 @@
 %     \textnormal{"u} \approx \frac{U_{rT1}}{\sqrt{3} \cdot U_{2}}\\
 %     i_{O} = \frac{I_{0}}{I_{rT}} \cdot 100\%
 % \end{gather*}
-\subsubsection{Kurzschlussmessung (KS)}\,\\
-\setlength\parindent{20pt}\indent KS auf US. $\rightarrow  \underline{U}_{K1}$ auf OS\\
-\indent KS auf OS. $\rightarrow \underline{U}_{K2}$ auf US
+\item[] {\textbf{Kurzschlussmessung (KS)}}
+
+\setlength\parindent{20pt}\indent KS auf US. $\rightarrow  \underline{U}_{K1}$ auf OS (meistens)\\
+\indent KS auf OS. $\rightarrow \underline{U}_{K2}$ auf US\\
+% \begin{align*}
+%     I_{K1} &= \frac{U_{1,LE}}{Z_{T1}} \qquad I_{K2} = \frac{U_{2,LE}}{Z_{T2}}\\
+% \end{align*}
+
 % \begin{itemize}
     \item[]{\textbf{Bemessungsspannung} (r = rated)}
     \[
@@ -90,13 +102,13 @@
 
     \item[]{\textbf{relative KS-Spannung [\%]}}
     \begin{align*}
-    \ul{u}_K &= u_{K,Re} + j u_{K,Im}\\
-        u_K  &= \sqrt{u^2_{K,Re}+u^2_{K,Im}}\\
-             &= \frac{U_K\cdot \sqrt{3}}{U_{rT}}\cdot 100\%\\
+        u_K  &= \sqrt{u^2_{K,Re}+u^2_{K,Im}}
+             = \frac{U_K\cdot \sqrt{3}}{U_{rT}}\cdot 100\%\\
              &= \frac{Z_T \cdot I_r}{U_{rT}/\sqrt{3}}\\
     \ul{u}_{K1}  &= \frac{\ul{U}_{K1}}{ U_{rT1}/\sqrt{3} } =\frac{\ul{U}_{K1}}{U_{LE,T1}}\\
     \ul{u}_{K2} &= \frac{\ul{U}_{K2}}{ U_{rT2}/\sqrt{3}} = \frac{\ul{U}_{K1} \cdot \textnormal{ü}}{ U_{rT1} \cdot \textnormal{ü}/\sqrt{3}}\\
-    u_{K,Re}      &= \frac{P_{K}}{S_{r}}\cdot 100\%=\frac{R_T \cdot I_r}{U_{rT}/\sqrt{3}}
+    u_{K,Re}      &= \frac{P_{K}}{S_{rT}}\cdot 100\%=\frac{R_T \cdot I_r}{U_{rT}/\sqrt{3}}\\
+    u_{K,Im}  &= \sqrt{u^2_{K}-u^2_{K,Re}}
     \end{align*}
 
     \item[]{\textbf{KS-Größen}}
@@ -107,22 +119,27 @@
 
     \item[]{\textbf{Betriebskonstanten}}
     \begin{align*}
-    Z_T &= u_K \cdot \frac{U^2_{rT}}{S_{rT}} \\
-    R_T &= \frac{u_{K,Re}}{100\%} \cdot \frac{U^2_{rT}}{S_{rT}} =
-         \frac{u_{K,Re}}{100\%} \cdot \frac{U_{rT}}{\sqrt{3}\cdot I_r}\\
-        &= P_K \cdot \frac{U^2_{rT}}{S^2_{rT}}\\
-    X_T &= u_{K,Im} \cdot \frac{U^2_{rT}}{S_{rT}}
+    Z_T &= \frac{u_K}{100\%} \cdot \frac{U^2_{rT1}}{S_{rT}} \\
+    R_T &= \frac{u_{K,Re}}{100\%} \cdot \frac{U^2_{rT1}}{S_{rT}} =
+         \frac{u_{K,Re}}{100\%} \cdot \frac{U_{rT1}}{\sqrt{3}\cdot I_r}\\
+        &= P_K \cdot \frac{U^2_{rT1}}{S^2_{rT}} = \frac{P_K}{3\cdot I^2_r}\\
+    X_T &= \sqrt{Z^2_T - R^2_T} \quad \left(= u_{K,Im} \cdot \frac{U^2_{rT}}{S_{rT}} \right)
     \end{align*}
 
     \item[]{\textbf{Verlustleistung, Wirkungsgrad}}
 \begin{align*}
     P_{ab} &= S_{rT} \cdot \cos \varphi\\
-    P_K &= 3 \cdot R_T \cdot I^2_r\\
-    \eta &= \frac{P_{ab}}{P_{zu}} = \frac{P_{ab}}{P_{ab}+P_K+P_L}
-\end{align*}\\
+    P_{K,OS} &= 3 \cdot R_T \cdot I^2_{r,US}\\
+    \eta &= \frac{P_{ab}}{P_{zu}} = \frac{P_{ab}}{P_{ab}+P_K+P_L}\\
+    \eta_{max} &= \frac{P'_{ab}}{P'_{zu}} = \frac{S_{rT}\cdot \cos \varphi \sqrt{\frac{P_L}{P_K}}}{P'_{ab} + 2 P_L} \leftarrow P_L = P_K
+    % I_{L,US} &= \sqrt{\frac{P_L}{3 \cdot R_T}} \leftarrow P_L = P_K
+\end{align*}
 $P_{ab}$: abgegebene Wirkleistung\\
-$P_K$: KS-/Kupferverluste\\
-$P_L$: Leerlaufverluste
+$P_{K,OS}$: KS-/Kupferverluste, Index: $OS/US$\\
+$I_r$: Bemessungsstrom auf $US$, wenn $P_K$ auf $OS$ \\
+$P_L$: Leerlaufverluste\\
+$\eta_{max}$: bei $P_L = P_K$
+
 
 \subsection{Parallelbetrieb von 2 Trafos}
 \item[] \textbf{Scheinleistungsteiler}
