@@ -87,7 +87,7 @@ Radius r-Werte siehe F39\\
 
 \textbf{Drehstrom}
 
-    \subitem{\ul{Einfach-/Bündelleiter}}
+    \subitem{\ul{Einfach-/Bündelleiter (Einfach-DS-System)}}
 \begin{align*}
     X_{b}' &= \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m}}{r_B}\right) +\frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
     \vspace{5pt}
@@ -98,7 +98,7 @@ Radius r-Werte siehe F39\\
 
 $n:$ Anzahl Teilleiter (wenn $n>1 \Rightarrow$ Bündelleiter)\\
 $D_m$: Abstände bei Symmetrie der Phasen zur Mastmitte\\
-$D_{12}:$ Abstand $L1 - L2$ usw.\\
+$D_{12}:$ Abstand $L1 - L2$,  Einheit: $[m]$\\
 $r_B:$ Ersatzradius (wenn $n=1$, dann $r_B = r$)\\
 $r_T:$ Radius Teilleiter (bei $n>1$)\\
 $a:$ Abstand Teilleiter (bei $n>1$)\\
@@ -106,7 +106,7 @@ $a:$ Abstand Teilleiter (bei $n>1$)\\
 % Werden Bezeichnet nach: n x 2r / a
 
 
-\subitem{\ul{Doppelleitung}}
+\subitem{\ul{Doppelleitung (Doppel-DS-System)}}
 \begin{align*}
     X_{b}' &= \frac{\pi}{2} \left( 4 \ln \left( \frac{D_{m} \cdot D_{L1/L\RN{2}}}{r \cdot D_{L1/L\RN{1}}}\right) + \frac{1}{n} \right) \cdot 10 ^{-2}   \left[\frac{\Omega}{km}\right]\\
     D_{L1/L\RN{2}} &= \sqrt[3]{D_{1,\RN{2}} \cdot D_{2,\RN{3}} \cdot D_{3,\RN{1}}}\\
@@ -136,7 +136,7 @@ $h:$ Höhe zw. L1 - Erde
     $B'_b:$ gilt für $f$ = 50 Hz\\
 
 \item[]{\textbf{Drehstrom}}
-\subitem{\ul{Einfach-/Bündelleitung}}
+\subitem{\ul{Einfach-/Bündelleitung (Einfach-DS-System)}}
     \begin{align*}
         C'_b &= \frac{2\cdot \pi \cdot \varepsilon_0}{ln \left( \dfrac{D_m}{r} \right)} \\
         B'_b &= \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D_m}{r_B} \right)} \left[ \frac{\mu S}{km} \right]\\
@@ -147,7 +147,7 @@ $h:$ Höhe zw. L1 - Erde
 
     Bei Einfachleitung $n=1 \Rightarrow r_B = r$\\
 
-\subitem{\ul{Doppelleitung}}
+\subitem{\ul{Doppelleitung (Doppel-DS-System)}}
     \begin{align*}
         B'_b &= \omega \cdot C'_b = \frac{17,47}{ln\left(\dfrac{D_m \cdot D_{L1/L\RN{2}}}{r_B \cdot D_{L1/L \RN{1}}} \right)} \left[ \frac{\mu S}{km} \right]\\
         D_{L1/L\RN{2}} &= \sqrt[3]{D_{1,\RN{2}} \cdot D_{2,\RN{3}} \cdot D_{3,\RN{1}}}\\
