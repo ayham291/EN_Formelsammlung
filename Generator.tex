@@ -13,25 +13,22 @@
 \subsection{Ersatzschaltbild (ESB)}
 Vernachlässigung von $R_S = 0$
 \begin{align*}
-    \ul{I} &= I_W +jI_B \qquad I_W = I \cdot \cos(\varphi) \quad I_B = \ul{I}\cdot (\pm sin(\varphi))\\
-    \ul{U}_p &= \ul{U} +jX_S \cdot \ul{I} \qquad
+    \ul{I} &= I_w +jI_b \qquad I_w = I \cdot \cos(\varphi) \quad I_b = \ul{I}\cdot (\pm sin(\varphi))\\
+    \ul{U}_p &= \ul{U} +jX_s \cdot \ul{I} \qquad
     U_p = \sqrt{(U+X\cdot I_B)^2 \cdot (X\cdot I_W)^2}
 \end{align*}
-$\ul{U}, \ul{I}$: Klemmen \quad $U_p$: Polrad (Quelle) \quad $X$: Statorreaktanz \\
-$\varphi$: $\sphericalangle (U, I)$ \qquad $\vartheta$:$\sphericalangle (U, U_p)$ \qquad $I_k$: Kurzschluss
+$\ul{U}, \ul{I}$: Klemmen \quad $U_p$: Polrad (Quelle) \quad $X_s$: Statorreaktanz \\
+$\varphi$: $\sphericalangle (U, I)$ \qquad $\vartheta$:$\sphericalangle (U, U_p)$
 
-
-
-
-\subsection{Alleinbetrieb (Inselbetrieb)}
-Belastungskennline:
+\subsection{Allein-/Inselbetrieb}
+Belastungskennline ($U_p=$ const.):
 \begin{align*}
-    1 &= \left( \dfrac{U}{U_p} \right)^2 - 2 \cdot \left( \dfrac{U}{U_p}\right) \cdot \left( \dfrac{I}{I_k}\right) \cdot (\pm \sin(\varphi)) + \left(\dfrac{I}{I_k}\right)^2\\
+    1 &= \left( \dfrac{U}{U_p} \right)^2 - 2 \cdot \left( \dfrac{U}{U_p}\right) \cdot \left( \dfrac{I}{I_k}\right) \cdot (\pm \sin(\varphi)) + \left(\dfrac{I}{I_k}\right)^2
 \end{align*}
 \subsubsection{Reine Wirkleistung}
 $sin(\varphi) = 0 \Rightarrow$ Kreis
 \begin{align*}
-    \dfrac{U}{U_p} &= \sqrt{1- \left(\dfrac{I}{I_k}\right)^2}
+    \dfrac{U}{U_p} &= \sqrt{1- \left(\dfrac{I}{I_k}\right)^2} \qquad I_k = \frac{U_p}{X_s}
 \end{align*}
 
 \subsubsection{Reine Blindleistung}
@@ -39,25 +36,38 @@ $    sin(\varphi) = \pm1 \Rightarrow$ Gerade
 \begin{align*}
     \dfrac{U}{U_p} &= 1 \mp \left(\dfrac{I}{I_k}\right)
 \end{align*}
-$- :$ induktiv \qquad $+ :$kapazitiv
+$- :$ induktiv \qquad $+ :$kapazitiv \qquad
+$I_k :$ Kurzschluss
 
-\subsection{Betrieb am starren Netz}
+\subsection{Netzbetrieb, Betrieb am starren Netz}
+Regulierkennlinie ($U=$ const.):
+\begin{align*}
+    \dfrac{U_p}{U} &=  \sqrt{1+2\cdot \dfrac{I}{I_B} \cdot \sin(\varphi) + \left( \dfrac{I}{I_B}\right)^2} \qquad I_B = \frac{U}{X}
+\end{align*}
+\subsubsection{Reine Wirkleistung}
+$sin(\varphi) = 0 \Rightarrow$ Kreis
+\begin{align*}
+    \dfrac{U_p}{U} &= \sqrt{1+ \left(\dfrac{I}{I_B}\right)^2}
+\end{align*}
 
-
+\subsubsection{Reine Blindleistung}
+$    sin(\varphi) = \pm1 \Rightarrow$ Gerade
+\begin{align*}
+    \dfrac{U_p}{U} &= 1 \pm \left(\dfrac{I}{I_B}\right)
+\end{align*}
+$+ :$ induktiv \qquad $- :$kapazitiv \qquad $I_B :$ Bezugsstrom
 
 \subsection{Leistung}
 $P_{mech,zu} = P_{el,ab} \neq f(\vartheta) \rightarrow$ für $\vartheta < 90\degree$ stabil\\
 \begin{align*}
-    sin(\vartheta) = \frac{XI_W}{U_p} &= \frac{P\cdot X}{3\cdot U \cdot U_p}  \qquad P = 3 \cdot \frac{U\cdot U_p}{X} \cdot sin(\vartheta)\\
+    sin(\vartheta) = \frac{I_w}{U_p} &= \frac{P\cdot X}{3\cdot U \cdot U_p}  \qquad P = 3 \cdot \frac{U\cdot U_p}{X} \cdot sin(\vartheta)\\
     S_{Bez} = 3 \cdot \dfrac{U^2}{X} & \qquad P_{Kipp} = P_{max} = 3\cdot U \cdot \frac{U_p}{X}\\
     \dfrac{P}{S_{Bez}} &= \left(\dfrac{U_p}{U}\right) \cdot sin(\vartheta)\\
     \dfrac{Q}{S_{Bez}} &= \left[\left(\dfrac{U_p}{U}\right) \cdot cos(\vartheta)\right] -1\\
     % P_{Kipp} &= 3 \cdot \dfrac{U \cdot U_p}{X_S}
 \end{align*}
 
-\newpage
 \subsection{Regelung}
-
 \begin{align*}
     \upsilon_{neu} &= sin^{-1}\left( \dfrac{P_{neu} \cdot X}{3 \cdot U \cdot U_{p,neu}}\right)\\
     Q_{neu} &= \left( \dfrac{3 \cdot U^2}{X_s}\right) \cdot \left( \left( \dfrac{U_{p,neu}}{U} cos( \upsilon_{neu})\right)-1\right)
@@ -69,22 +79,25 @@ $P_{mech,zu} = P_{el,ab} \neq f(\vartheta) \rightarrow$ für $\vartheta < 90\deg
 \indent $I_w =$ var. $\rightarrow P_{zu}=$ var.\\
 \indent $I_b =$ var. $\rightarrow I_{Err}, U_p =$ var.\\
 
-\textbf{Blindleistung (Polradspannung var.)}\\
-\indent $P =$ const $\rightarrow I_w= $ const\\
+\textbf{Variable Polradspannung}\\
+\indent $I_{err} \sim U_p$ \\
+\indent $P_{zu} =$ const $\rightarrow I_w= $ const\\
 \indent $Q =$ var. $\rightarrow I_b = $ var. $\rightarrow I_{Err}=$ var.\\
 \indent bei $1 \leq \frac{U_p}{U} \leq 2$ ergibt sich \\
 \indent $-0,5 (kap.) \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
 
 \textbf{Turbinenventildrosselung}\\
+\indent $U_p =$ const $\rightarrow I_b = f(I_w)$\\
+\indent $P =$ var. $\rightarrow I_w= $ var. $\rightarrow Q =$ var.\\
+\indent bei $0,9 \leq \frac{P}{S_{Bez}} \leq 1,75$ ergibt sich\\
+\indent $0 \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$
+
 $U_p$, $ P$, $Q$ und $\upsilon$ sind abhängig voneinander. \\
 Aus zwei Größen $\rightarrow$ die anderen Beiden\\
-\indent $P =$ var. $\rightarrow I_w= $ var. $\rightarrow Q =$ var.\\
-\indent $U_p =$ const $\rightarrow I_b = f(I_w)$\\
-\indent $I_{err} \sim U_p$ \\
-\indent bei $0,9 \leq \frac{P}{S_{Bez}} \leq 1,75$ ergibt sich\\
-\indent $0 \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
 
 
-\textbf{Reiner Blindleistung (Phasenschieberbetrieb)}\\
+\textbf{Reine Blindleistung (Phasenschieberbetrieb)}\\
 \indent $P = 0 \rightarrow I_w= 0$ \\
-\indent $Q =$ var. $\rightarrow I_b = $ var.
+$U, U_p$ phasengleich\\
+\indent $Q =$ var. $\rightarrow I_b = $ var. $\rightarrow U_p$ var.\\
+Bei Leerlauf: $I_b = 0 \rightarrow U = U_p$
