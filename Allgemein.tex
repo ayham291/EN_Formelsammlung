@@ -28,7 +28,7 @@
 
     \item{\textbf{Effektivgrößen, Symmetrische Last}}
         \begin{center}
-            \vspace{-1em}
+            % \vspace{-1em}
     \begin{tabular}[h]{l|l|l}
         Stranggröße & Stern & Dreieck
      \vspace{1pt}\\
@@ -51,29 +51,44 @@
         \end{flalign*}
         \textit{in Sternschaltung:}
         \begin{flalign*}
-        \underline{S}_{ds} &= \frac{U_{LL}^2}{\underline{Z}_{LN}*}  &\\
-        \underline{S}_{ws}  &= \frac{U_{LL}^2}{3 \cdot \underline{Z}_{LN}*} &
+        \underline{S}_{ds} &= \frac{U_{LL}^2}{\underline{Z}_{LN}*} \qquad
+        \underline{S}_{ws} = \frac{U_{LL}^2}{3 \cdot \underline{Z}_{LN}*} &
         \end{flalign*}
 
-        \underline{Wirkleistung P [W]:}
+        \underline{Wirkleistung P [W]: Realteil}
         \begin{flalign*}
-        P   &= S \cdot \cos \varphi &\\
-            &= 3 \cdot U_{LE} \cdot I_L \cdot \cos \varphi &\\
+        P   &= S \cdot \cos \varphi
+            = 3 \cdot U_{LE} \cdot I_L \cdot \cos \varphi &\\
             &= \sqrt{3} \cdot U_{LL} \cdot I_L \cdot \cos \varphi &
         \end{flalign*}
 
-        \underline{Blindleistung Q [var]:}
+        \underline{Blindleistung Q [var]: Imaginärteil}
         \begin{flalign*}
-        |Q| &= S \cdot \sin \varphi = P \cdot \tan \varphi &\\
-            &= 3 \cdot U_{LE} \cdot I_L \cdot \sin \varphi &\\
-            &= \sqrt{3} \cdot U_{LL} \cdot I_L \cdot \sin \varphi &\\
-           & Q
-            \begin{cases}
-                \text{induktiv} >0\\
-                \text{kapazitiv} <0
-                \end{cases}
+        Q &= S \cdot \sin \varphi = P \cdot \tan \varphi
+            = 3 \cdot U_{LE} \cdot I_L \cdot \sin \varphi &\\
+            &= \sqrt{3} \cdot U_{LL} \cdot I_L \cdot \sin \varphi
         \end{flalign*}
+        $Q > 0$ : induktiv \qquad $Q < 0$ : kapazitiv
 \end{enumerate}
+
+\qquad \underline{Leistungsfaktor, Winkel}:\\
+\begin{center}
+\begin{tabular}[h]{l|l}
+    cos $\varphi$ & $\varphi$ in Grad [\degree]\\
+    \hline
+    0,95 & 18,1949\\
+    0,9 & 25,8419\\
+    0,85 & 31,7883\\
+    0,8 & 36,8699\\
+    0,75 & 41,4096
+\end{tabular}
+\end{center}
+% \begin{flalign*}
+%     \cos \varphi &= 0,95 \rightarrow \varphi = 18,1949\degree &\\
+%     \cos \varphi &= 0,9 \rightarrow \varphi = 25,8419\degree &\\
+%     \cos \varphi &= 0,85 \rightarrow \varphi = 31,7883\degree &\\
+%     \cos \varphi &= 0,8 \rightarrow \varphi = 36,8699\degree &
+% \end{flalign*}
 
 \subsection{Energiebedarf, Deckung}
 \begin{enumerate}

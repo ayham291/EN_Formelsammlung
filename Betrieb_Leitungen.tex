@@ -5,16 +5,16 @@
 \begin{itemize}
     \item[] \textbf{Leitung mit Verlusten}
     \begin{align*}
-        \ul{\gamma} &= \sqrt{(R'_b +jX'_b)\cdot(G'_b+jB'_b)}= \alpha + j \beta \left[\frac{\degree}{km} \right]\\
+        \ul{\gamma} &= \sqrt{(R'_b +jX'_b)\cdot(G'_b+jB'_b)} = \alpha + j \beta \left[\frac{1}{km} \right]\\
         \ul{Z}_w &= \sqrt{\dfrac{R'_b + jX'_b}{G'_b + jB'_b}}= |Z_w| \cdot e^{j\delta}
     \end{align*}
     \indent Falls Formel von $\ul{Z}_w$ nicht über TR berechenbar $\rightarrow$\\
     Betrag: erst $\ul{Z}_w^2$, dann $\sqrt{|Z_w^2|}$ ermitteln \\
     Phase: $0.5 \cdot \arg(\ul{Z}_w^2)$
 
-    gilt für $\gamma$ auch analog.\\
+    $\Rightarrow$ Gilt analog auch für $\ul{\gamma}$.\\
 
-    \indent $\gamma:$ Ausbreitungskonstante\\
+    \indent $\gamma:$ Ausbreitungskonstante $[\frac{rad}{km} = \frac{1}{km}]$\\
     \indent $\alpha:$ Dämpfungskonstante\\
     \indent $\beta:$ Phasenkonstante $[\frac{rad}{km} = \frac{180\degree}{\pi} \cdot \frac{1}{km} = \frac{\degree}{km}]$\\
     \indent $Z_w:$ Wellenwiderstand\\
@@ -28,7 +28,7 @@
             |Z_w| &= \sqrt{ \dfrac{X'_b}{B'_b} } = \sqrt{ \dfrac{L'_b}{C'_b} }
         \end{align*}
     Richtwerte:
-            $Z_w \approx 400\: \ohm \qquad \beta = \frac{0,06\degree}{km}$\\
+            $Z_w \approx 400\: \ohm \qquad \beta = 0,06\frac{\degree}{km}$\\
 
     \item[] \textbf{natürliche Leistung, Blindleistungsverluste}
 
@@ -62,7 +62,9 @@
 $R_L$: Resistanz \qquad $X_L$: Reaktanz\\
 $B_L$: Suszeptanz \qquad $G_L$: Konduktanz\\
 
-Index $1/\ul{2}$: Größe am Anfang/\ul{Ende} der Leitung\\
+$R_L, X_L$ in Reihen-, $B_L, G_L$ in Parallelschaltung\\
+
+Index $1/\ul{2}$: Größe am Anfang/\ul{Ende} der Leitung ($U_{LE}$!!)\\
 Index $L$: Größen bezogen auf Leitung\\
 $dU$: Spannung am Längszweig\\
 
@@ -115,7 +117,7 @@ $dU$: Spannung am Längszweig\\
         \ul{I}_1 &= \ul{I}_2 \cdot \cos(\beta l) + j \cdot \frac{\ul{U}_2}{Z_w} \cdot \sin (\beta l)
     \end{align*}
     \textit{bei Leerlauf:} $\ul{I}_2 = 0$, $\ul{Z}_2 \rightarrow \infty$\\
-    \textit{bei Betrieb mit natürlicher Leistung:} $\varphi = \beta l$
+    \textit{bei Betrieb mit natürlicher Leistung:} $\varphi = \beta l$  $[\frac{\degree}{km} \cdot km = \degree]$
     \begin{align*}
         \ul{U}_1 &= |\ul{U}_2| \cdot e^{j\varphi} \qquad
         \ul{I}_1 = |\ul{I}_2| \cdot e^{j\varphi}\\
@@ -127,17 +129,22 @@ $dU$: Spannung am Längszweig\\
         \ul{U}_1 &= \ul{U}_2 \cdot \cosh(\ul{\gamma} l) + \ul{I}_2 \cdot \ul{Z}_w \cdot \sinh(\ul{\gamma} l)\\
         \ul{I}_1 &= \ul{I}_2 \cdot \cosh(\ul{\gamma} l) + \frac{\ul{U}_2}{\ul{Z}_w}\cdot \sinh(\ul{\gamma} l)
     \end{align*}
-    nicht direkt mit komplexen Modus des TR einsetzbar!\\
-    Lösung: $\alpha \cdot l $ und $ \beta \cdot l [\degree]$ einzeln berechnen, dann:
+    Nicht direkt mit komplexen Modus des TR einsetzbar!\\
+    \ul{Lösung:} $\alpha \cdot l $ und $ \beta \cdot l [\degree]$ einzeln berechnen, dann:
     \begin{align*}
         \cosh(\ul{\gamma}l) &= \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} + e^{-\alpha l} \cdot e^{-j\beta l} \right]\\
-        \sinh (\ul{\gamma}l)&= \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} - e^{-\alpha l} \cdot e^{-j\beta l} \right]\\
+        \sinh (\ul{\gamma}l)&= \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} - e^{-\alpha l} \cdot e^{-j\beta l} \right]
         % \ul{U}_1 = \ul{U}_2 \cdot  \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} + e^{-\alpha l} \cdot e^{-j\beta l} \right]\\
         % + \ul{I}_2 \cdot \ul{Z}_w \cdot \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} - e^{-\alpha l} \cdot e^{-j\beta l} \right]\\
         % \ul{I}_1 = \ul{I}_2 \cdot  \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} + e^{-\alpha l} \cdot e^{-j\beta l} \right]\\
         % + \ul{I}_2 \cdot \ul{Z}_w \cdot \frac{1}{2} \left[e^{\alpha l} \cdot e^{j\beta l} - e^{-\alpha l} \cdot e^{-j\beta l} \right]\\
     \end{align*}
+    $e^{\pm \alpha l }:$ Betrag \qquad $e^{\pm j\beta l}:$ Winkel ($\angle$ im TR)\\
 
+    \textbf{Wichtig}: Winkel von $\beta$ umrechnen für $\beta \cdot l$ !\\
+    \begin{equation*}
+    [\beta] = \frac{rad}{km} \Rightarrow \frac{180\degree}{\pi} \cdot \frac{1}{km} = \frac{\circ}{km}\\
+    \end{equation*}\\
 \item[] \textbf{HS-/HöS-DS-Kabel}
 
     $l>95km$: langes Kabel\\

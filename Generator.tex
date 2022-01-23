@@ -7,7 +7,7 @@
 
 \textbf{Polpaarzahl}
 \begin{align*}
-    n &= \dfrac{3000}{p} \left[ \frac{1}{min}\right] \qquad \textnormal{für f = 50Hz}
+    n &=\frac{f}{p}= \dfrac{3000}{p} \left[ \frac{1}{min}\right] \qquad \textnormal{für f = 50Hz}
     \end{align*}
 
 \subsection{Ersatzschaltbild (ESB)}
@@ -15,31 +15,40 @@ Vernachlässigung von $R_S = 0$
 \begin{align*}
     \ul{I} &= I_W +jI_B \qquad I_W = I \cdot \cos(\varphi) \quad I_B = \ul{I}\cdot (\pm sin(\varphi))\\
     \ul{U}_p &= \ul{U} +jX_S \cdot \ul{I} \qquad
-    U_p = \sqrt{(U+X\cdot I_B)^2 \cdot (X\cdot I_W)^2}\\
-    % \qquad \textnormal{$R_S$ wird meist vernachl.}\\
-    1 &= \left( \dfrac{U}{U_p} \right)^2 - 2 \cdot \left( \dfrac{U \cdot I}{U_p \cdot I_k}\right) \cdot (\pm \sin(\varphi)) + \left(\dfrac{I}{I_k}\right)^2
+    U_p = \sqrt{(U+X\cdot I_B)^2 \cdot (X\cdot I_W)^2}
 \end{align*}
-
 $\ul{U}, \ul{I}$: Klemmen \quad $U_p$: Polrad (Quelle) \quad $X$: Statorreaktanz \\
 $\varphi$: $\sphericalangle (U, I)$ \qquad $\vartheta$:$\sphericalangle (U, U_p)$ \qquad $I_k$: Kurzschluss
 
+
+
+
 \subsection{Alleinbetrieb (Inselbetrieb)}
-\subsubsection{Reine Wirkleistung}
-$cos(\varphi) = 1$
+Belastungskennline:
 \begin{align*}
-    1 &= \left( \dfrac{U}{U_p} \right)^2 + \left(\dfrac{I}{I_k}\right)^2
+    1 &= \left( \dfrac{U}{U_p} \right)^2 - 2 \cdot \left( \dfrac{U}{U_p}\right) \cdot \left( \dfrac{I}{I_k}\right) \cdot (\pm \sin(\varphi)) + \left(\dfrac{I}{I_k}\right)^2\\
+\end{align*}
+\subsubsection{Reine Wirkleistung}
+$sin(\varphi) = 0 \Rightarrow$ Kreis
+\begin{align*}
+    \dfrac{U}{U_p} &= \sqrt{1- \left(\dfrac{I}{I_k}\right)^2}
 \end{align*}
 
 \subsubsection{Reine Blindleistung}
-$    sin(\varphi) = \pm1$
+$    sin(\varphi) = \pm1 \Rightarrow$ Gerade
 \begin{align*}
-    \left( \dfrac{U}{U_p} \right) &= 1 \mp \left(\dfrac{I}{I_k}\right)
+    \dfrac{U}{U_p} &= 1 \mp \left(\dfrac{I}{I_k}\right)
 \end{align*}
+$- :$ induktiv \qquad $+ :$kapazitiv
+
+\subsection{Betrieb am starren Netz}
+
+
 
 \subsection{Leistung}
 $P_{mech,zu} = P_{el,ab} \neq f(\vartheta) \rightarrow$ für $\vartheta < 90\degree$ stabil\\
 \begin{align*}
-    sin(\vartheta) = \frac{XI_W}{U_p} & \qquad P = 3 \cdot \frac{U\cdot U_p}{X} \cdot sin(\vartheta)\\
+    sin(\vartheta) = \frac{XI_W}{U_p} &= \frac{P\cdot X}{3\cdot U \cdot U_p}  \qquad P = 3 \cdot \frac{U\cdot U_p}{X} \cdot sin(\vartheta)\\
     S_{Bez} = 3 \cdot \dfrac{U^2}{X} & \qquad P_{Kipp} = P_{max} = 3\cdot U \cdot \frac{U_p}{X}\\
     \dfrac{P}{S_{Bez}} &= \left(\dfrac{U_p}{U}\right) \cdot sin(\vartheta)\\
     \dfrac{Q}{S_{Bez}} &= \left[\left(\dfrac{U_p}{U}\right) \cdot cos(\vartheta)\right] -1\\
@@ -50,11 +59,11 @@ $P_{mech,zu} = P_{el,ab} \neq f(\vartheta) \rightarrow$ für $\vartheta < 90\deg
 \subsection{Regelung}
 
 \begin{align*}
-    \upsilon_{neu} &= sin^{-1}\left( \dfrac{P_{neu} \cdot X_S}{3 \cdot U \cdot U_{p,neu}}\right)\\
+    \upsilon_{neu} &= sin^{-1}\left( \dfrac{P_{neu} \cdot X}{3 \cdot U \cdot U_{p,neu}}\right)\\
     Q_{neu} &= \left( \dfrac{3 \cdot U^2}{X_s}\right) \cdot \left( \left( \dfrac{U_{p,neu}}{U} cos( \upsilon_{neu})\right)-1\right)
 \end{align*}
 
-\textbf{Konstate Scheinleistung}\\
+\textbf{Konstante Scheinleistung}\\
 \indent $S = S_{max} =$ const\\
 \indent $\ul{U}=$ const, $|\ul{I}| =$ const\\
 \indent $I_w =$ var. $\rightarrow P_{zu}=$ var.\\
@@ -71,6 +80,7 @@ $U_p$, $ P$, $Q$ und $\upsilon$ sind abhängig voneinander. \\
 Aus zwei Größen $\rightarrow$ die anderen Beiden\\
 \indent $P =$ var. $\rightarrow I_w= $ var. $\rightarrow Q =$ var.\\
 \indent $U_p =$ const $\rightarrow I_b = f(I_w)$\\
+\indent $I_{err} \sim U_p$ \\
 \indent bei $0,9 \leq \frac{P}{S_{Bez}} \leq 1,75$ ergibt sich\\
 \indent $0 \leq \frac{Q}{S_{Bez}} \leq +0,75(ind.)$\\
 
