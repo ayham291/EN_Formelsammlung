@@ -17,6 +17,7 @@
 \usepackage{arydshln}  				            % Punkt/strich Linen in Tabellen
 \usepackage{lscape} 			            	% Seite kann mit landscape in Querformat dargestellt werden
 \usepackage{tikz}                               % Kleine Koordinatensysteme
+\usepackage{authoraftertitle}                  % Autor nach dem Titel
 \usepackage{steinmetz}
 \graphicspath{{./figures}}
 
@@ -36,13 +37,42 @@
 \newcommand{\ul}{\underline}
 \renewcommand{\subitem}[1]{{\setlength\itemindent{15pt} \item[-] #1}}
 
+\def\FS{Formelsammlung}
+\def\Fach{Energienetze}
+\title{\FS \ \Fach}
+\author{Ayham Alhalaibi}
+\date{\today}
+\def\MatNr{SECRET} % DONT PUSH TO PUBLIC REMOTE REPO
+\def\Semester{Wintersemster 21/22}
 
-\title{Formelsammlung EN}
-\author{Hoang Tony Pham}
 \onehalfspacing
 
 \begin{document}
-\maketitle
+
+\begin{titlepage}
+	\thispagestyle{empty}
+
+	\begin{center}
+        \includegraphics[width=0.7\textwidth]{./OTHR_OTHR_Logo.pdf}\\
+		\vspace*{\stretch{1}}
+		\Huge
+		\textsc{\MyTitle}\\
+		\vspace*{\stretch{0.25}}
+		\normalsize
+		\Semester
+
+		\vspace*{\stretch{2}}
+		{\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{l l}
+				Name:            & \hspace{4cm}\MyAuthor \\
+				Matrikelnummer:  & \hspace{4cm}\MatNr    \\
+				Letzte Änderung: & \hspace{4cm}\MyDate
+			\end{tabular}
+		}
+		\vspace*{\stretch{1}}
+
+	\end{center}
+\end{titlepage}
 
 \input{Allgemein}
 \input{Trafo}
